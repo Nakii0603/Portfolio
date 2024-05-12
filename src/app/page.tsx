@@ -12,15 +12,14 @@ function App() {
   };
 
   return (
-    <div className="max-w-[1400px] mx-auto">
+    <div className="max-w-[1400px] m-auto all-1000 ">
       <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
       <div>
         <div className="bg-image absolute z-[-1]">
           <img src="" alt="" />
         </div>
         <About isDarkMode={isDarkMode} />
-        {/* <Articles isDarkMode={isDarkMode} /> */}
-
+        <Articles isDarkMode={isDarkMode} />
       </div>
     </div>
   );
