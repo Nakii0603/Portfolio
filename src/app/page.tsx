@@ -1,26 +1,27 @@
 "use client";
-import { DarkModeSwitch } from "react-toggle-dark-mode";
-import React, { useState } from "react";
+import { useState } from "react";
 import Articles from "@/components/Articles";
+import Header from "@/components/Header";
+import About from "@/components/About";
+import Img from "../../public/img";
 
 function App() {
   const [isDarkMode, setDarkMode] = useState(false);
-  const toggleDarkMode = (checked: boolean) => {
-    setDarkMode(checked);
+  const toggleDarkMode = () => {
+    setDarkMode(!isDarkMode);
   };
 
   return (
-    <div className="duration-500 transition-all  max-w-[1400px] mx-auto">
-      <header className={`p-4 flex justify-between  ${isDarkMode ? "bg-black" : "bg-[#9d7373]"}`}>
-        <h1 className={`${isDarkMode ? "text-white" : ""} text-[28px]`}>Nakii</h1>
-        <div className="flex gap-3 items-center">
-          <p className={`${isDarkMode ? "text-white" : ""}`}>home</p>
-          <p className={`${isDarkMode ? "text-white" : ""}`}>About</p>
-          <p className={`${isDarkMode ? "text-white" : ""}`}>Project</p>
-          <DarkModeSwitch checked={isDarkMode} onChange={toggleDarkMode} size={30} />
+    <div className="max-w-[1400px] mx-auto">
+      <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <div>
+        <div className="bg-image absolute z-[-1]">
+          <img src="" alt="" />
         </div>
-      </header>
-      <Articles isDarkMode={isDarkMode} />
+        <About isDarkMode={isDarkMode} />
+        {/* <Articles isDarkMode={isDarkMode} /> */}
+
+      </div>
     </div>
   );
 }
