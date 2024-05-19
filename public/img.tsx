@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Img() {
+export default function mernImg() {
   return (
-    <img src="/images/img.p\jpen" alt="" />
+    <img src="/images/MERN.png" alt="" />
   )
 }
