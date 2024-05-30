@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
-export default function mernImg() {
-  return (
-    <img src="/images/MERN.png" alt="" />
-  )
+export default function MernImg() {
+  return <img src="/images/MERN.png" alt="" />;
 }
