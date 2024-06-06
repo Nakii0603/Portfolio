@@ -1,15 +1,11 @@
-import React from "react";
 import { DarkModeType } from "./Types";
-import { ExampleComponent } from "./Type";
 
-export default function Skills({ isDarkMode }: DarkModeType) {
+export const Skills = ({ isDarkMode }: DarkModeType) => {
   return (
-    <div
-      className={`gap-[50px] w-[100vw] h-[100vh] flex justify-center all-1000 ${
-        isDarkMode ? "bg-[black]" : "bg-[white]"
-      }`}
-    >
-      <p className="text-white">Skills</p>
+    <div id="Skills" className=" px-4 py-[120px]">
+      <p className="w-full text-white text-center text-main text-xl font-bold dark:text-[#D1D5DB] mt-4 mb-12">SKILLS</p>
+      <p className="isDarkMode:text-[purple]">dfvdfv</p>
+      <p className={`${isDarkMode ? "text-[purple]" : "text-black"}`}>dvfdvgbn</p>
     </div>
   );
-}
+};

@@ -1,7 +1,7 @@
 import React from "react";
 import { DarkModeType } from "./Types";
 
-export default function Articles({ isDarkMode }: DarkModeType) {
+export default function Project({ isDarkMode }: DarkModeType) {
   return (
     <div className={`p-4 flex flex-col  ${isDarkMode ? "bg-black" : "bg-white"}`}>
       <h2>Works</h2>

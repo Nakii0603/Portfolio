@@ -1,19 +1,16 @@
 import React from "react";
 import { DarkModeType } from "./Types";
 import { ExampleComponent } from "./Type";
-import MernImg from "../../public/img";
 
 export default function About({ isDarkMode }: DarkModeType) {
   return (
     <div
-      className={`gap-[50px] w-[100vw] h-[100vh] flex justify-center all-1000 ${
-        isDarkMode ? "bg-[black]" : "bg-[white]"
-      }`}
+      className={`gap-[50px] p-4 h-fit xl:h-[100vh] flex justify-center ${isDarkMode ? "bg-[black]" : "bg-[white]"}`}
     >
-      <div className="mt-[250px] ">
-        <div className="flex justify-between w-[1400px] ">
-          <div className="w-[450px] ">
-            <p className={`all-1000 text-[40px]  ${isDarkMode ? "text-white" : ""}`}> Hi, I am Natsagdorj</p>
+      <div className="mt-[250px] max-sm:mt-[100px] max-lg:mt-[200px] ">
+        <div className="flex justify-between max-md:justify-center">
+          <div className="w-[50%] max-md:w-[100%] ">
+            <p className={`all-1000 text-[40px] mb-3 ${isDarkMode ? "text-white" : ""}`}> Hi, I am Natsagdorj</p>
             <ExampleComponent />
             <p className={`all-1000 text-[20px]  ${isDarkMode ? "text-[grey]" : ""}`}>
               Passionate IT professional with a drive for innovation and a dedication to helping companies succeed.
@@ -21,7 +18,7 @@ export default function About({ isDarkMode }: DarkModeType) {
               Possesses a flexible leadership style suited for working towards common objectives in any setting.
             </p>
           </div>
-          <MernImg />
+          <div className="img max-xl:bg-[50%] max-md:hidden"></div>
         </div>
       </div>
     </div>
