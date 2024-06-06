@@ -8,7 +8,7 @@ const Header = ({ isDarkMode, toggleDarkMode }: PropsType) => {
   return (
     <header
       className={`p-4 border-box flex fixed max-w-[1400px] w-[100vw] justify-between  ${
-        isDarkMode ? "bg-[black]" : "bg-[white]"
+        isDarkMode ? "bg-[#00000000]" : "bg-[white]"
       }`}
     >
       <h1 className={`roboto font-medium text-[24px] all-1000 ${isDarkMode ? "text-white" : ""} text-[28px]`}>Nakii</h1>
