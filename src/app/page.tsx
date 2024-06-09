@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 
-
 function App() {
   const [isDarkMode, setDarkMode] = useState(true);
   const toggleDarkMode = () => {

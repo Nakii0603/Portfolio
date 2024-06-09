@@ -1,10 +1,10 @@
-import React from "react";
-import { DarkModeType } from "./Types";
+import { DarkModeType } from "../type/Types";
 import { ExampleComponent } from "./Type";
 
 export default function About({ isDarkMode }: DarkModeType) {
   return (
     <div
+      id="about"
       className={`gap-[50px] mb-fit p-4 h-[100vh] flex justify-center ${isDarkMode ? "bg-[black]" : "bg-[white]"}`}
     >
       <div className="mt-[250px] max-sm:mt-[100px] max-lg:mt-[200px] ">
