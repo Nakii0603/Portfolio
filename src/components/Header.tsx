@@ -39,12 +39,6 @@ const Header = ({ isDarkMode, toggleDarkMode }: PropsType) => {
         >
           Projects
         </p>
-        <p
-          className={`hover-underline-animation cursor-pointer all-1000 ${isDarkMode ? "text-white" : ""}`}
-          onClick={() => scrollToSection("education")}
-        >
-          Education
-        </p>
         <DarkModeSwitch checked={isDarkMode} onChange={toggleDarkMode} size={30} />
       </div>
     </header>

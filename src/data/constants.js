@@ -1,4 +1,90 @@
+export const hrms = [
+  {
+    tech: "Typescript",
+  },
+  {
+    tech: "React",
+  },
+  {
+    tech: "Graphql",
+  },
+  {
+    tech: "Node Js",
+  },
+  {
+    tech: "MongoDB",
+  },
+  {
+    tech: "Monorepo",
+  },
+  {
+    tech: "Tailwind CSS",
+  },
+  {
+    tech: "Material UI",
+  },
+  {
+    tech: "Cypress",
+  },
+  {
+    tech: "Jest",
+  },
+]
+export const ecommerce = [
+  {
+    tech: "Typescript",
+  },
+  {
+    tech: "React",
+  },
+  {
+    tech: "Node Js",
+  },
+  {
+    tech: "MongoDB",
+  },
+  {
+    tech: "Tailwind CSS",
+  },
+  {
+    tech: "Material UI",
+  },
 
+]
+export const food = [
+  {
+    tech: "Typescript",
+  },
+  {
+    tech: "React",
+  },
+  {
+    tech: "Node Js",
+  },
+  {
+    tech: "MongoDB",
+  },
+  {
+    tech: "Material UI",
+  },
+]
+export const blog = [
+  {
+    tech: "Javascript",
+  },
+  {
+    tech: "React",
+  },
+  {
+    tech: "Node Js",
+  },
+  {
+    tech: "MongoDB",
+  },
+  {
+    tech: "Tailwind CSS",
+  },
+]
 export const skills = [
   {
     title: "Frontend",
@@ -33,7 +119,7 @@ export const skills = [
       },
       {
         name: "Tailwind CSS",
-        image:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAPFBMVEX////G6fxsyvk/v/g4vfhhyPmz4vuK1PoAtfckufgvu/hTxPn6/f+h2/tGwPjS7v255fxMwviT1/qn3vsZjXhWAAAAbElEQVR4AeWOCQqAMAwEq11r06b3//9qAwiI0QfowHINC2N+yLJabE53uycgUGTtF11CmDqLLVdZ57iJhSt9V+4cCQB5a1RGJgr9FrrW866GbmpoGylISlNC3RxnsbY+hLbX0GSJIKE6zOajHN4ZA8/fNs9XAAAAAElFTkSuQmCC",
+        image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAPFBMVEX////G6fxsyvk/v/g4vfhhyPmz4vuK1PoAtfckufgvu/hTxPn6/f+h2/tGwPjS7v255fxMwviT1/qn3vsZjXhWAAAAbElEQVR4AeWOCQqAMAwEq11r06b3//9qAwiI0QfowHINC2N+yLJabE53uycgUGTtF11CmDqLLVdZ57iJhSt9V+4cCQB5a1RGJgr9FrrW866GbmpoGylISlNC3RxnsbY+hLbX0GSJIKE6zOajHN4ZA8/fNs9XAAAAAElFTkSuQmCC",
       },
       {
         name: "Material UI",

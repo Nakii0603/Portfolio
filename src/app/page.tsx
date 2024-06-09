@@ -3,6 +3,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
 
 function App() {
   const [isDarkMode, setDarkMode] = useState(true);
@@ -17,6 +18,7 @@ function App() {
         <div className="flex items-center flex-col ">
           <About isDarkMode={isDarkMode} />
           <Skills isDarkMode={isDarkMode} />
+          <Projects isDarkMode={isDarkMode} />
         </div>
       </div>
     </div>
