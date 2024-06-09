@@ -20,7 +20,13 @@ export default function Projects({ isDarkMode }: DarkModeType) {
       id="project"
       className={`p-4 flex gap-3 w-[100vw] flex-col items-center  ${isDarkMode ? "bg-black" : "bg-white"}`}
     >
-      <h2 className={`text-[20px]  ${isDarkMode ? "text-white" : ""}`}>Works</h2>
+      <h2
+        className={`text-[42px] font-semibold mb-[20px] max-md:text-[32px] max-md:mt-[12px]  ${
+          isDarkMode ? "text-white" : ""
+        }`}
+      >
+        Works
+      </h2>
       <div className="flex justify-between gap-2">
         <div
           onClick={redirectEcommerce}
@@ -45,7 +51,7 @@ export default function Projects({ isDarkMode }: DarkModeType) {
           onClick={redirectFood}
           className={`bg-[#171721] p-4 gap-4 flex flex-col rounded-[12px] w-[300px] ${isDarkMode ? "text-white" : ""}`}
         >
-          <div className="eCommerce"></div>
+          <div className="food"></div>
           <div className="flex flex-wrap gap-3">
             {food.map((item, index) => (
               <p
@@ -64,7 +70,7 @@ export default function Projects({ isDarkMode }: DarkModeType) {
           onClick={redirectBlog}
           className={`bg-[#171721] p-4 gap-4 flex flex-col rounded-[12px] w-[300px] ${isDarkMode ? "text-white" : ""}`}
         >
-          <div className="eCommerce"></div>
+          <div className="blog"></div>
           <div className="flex flex-wrap gap-3">
             {blog.map((item, index) => (
               <p
@@ -83,7 +89,7 @@ export default function Projects({ isDarkMode }: DarkModeType) {
           onClick={redirectHRMS}
           className={`bg-[#171721] p-4 gap-4 flex flex-col rounded-[12px] w-[300px] ${isDarkMode ? "text-white" : ""}`}
         >
-          <div className="eCommerce"></div>
+          <div className="hrms"></div>
           <div className="flex flex-wrap gap-3">
             {ecommerce.map((item, index) => (
               <p
