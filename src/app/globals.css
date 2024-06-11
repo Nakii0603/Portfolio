@@ -5,7 +5,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
 
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: #4af626;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.vt323-regular {
+  font-family: "VT323", monospace;
+  font-weight: 400;
+}
 .img {
   background-image: url("./../../public/MERN.png");
   width: 600px;
@@ -13,7 +42,7 @@
   background-repeat: no-repeat;
   background-size: 100%;
 }
-.eCommerce{
+.eCommerce {
   border-radius: 4px;
   background-image: url("./../../public/eCommerce.png");
   width: 100%;
@@ -21,7 +50,7 @@
   background-repeat: no-repeat;
   background-size: 100%;
 }
-.food{
+.food {
   border-radius: 4px;
   background-image: url("./../../public/food.png");
   width: 100%;
@@ -29,7 +58,7 @@
   background-repeat: no-repeat;
   background-size: 100%;
 }
-.blog{
+.blog {
   border-radius: 4px;
   background-image: url("./../../public/blog.png");
   width: 100%;
@@ -37,7 +66,7 @@
   background-repeat: no-repeat;
   background-size: 100%;
 }
-.hrms{
+.hrms {
   border-radius: 4px;
   background-image: url("./../../public/hrms.png");
   width: 100%;
