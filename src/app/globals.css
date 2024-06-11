@@ -9,7 +9,15 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
 }
+.project {
+  transition: transform 200ms;
+}
 
+.project:hover {
+  transform: scale(1.05);
+  transition: transform 500ms;
+  border: #854ce6 1px solid;
+}
 .hover-underline-animation {
   display: inline-block;
   position: relative;
