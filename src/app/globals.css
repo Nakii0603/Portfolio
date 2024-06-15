@@ -16,8 +16,20 @@
 .project:hover {
   transform: scale(1.05);
   transition: transform 500ms;
-  border: #854ce6 1px solid;
+  border: #854ce6 2px solid;
 }
+
+.projectWhite {
+  background-size: cover;
+  transition: transform 500ms, border 500ms, box-shadow 500ms; 
+}
+
+.projectWhite:hover {
+  border: #9a78d6 2px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
 .hover-underline-animation {
   display: inline-block;
   position: relative;

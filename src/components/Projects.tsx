@@ -31,8 +31,8 @@ export default function Projects({ isDarkMode }: DarkModeType) {
         <div className="flex gap-2 max-xl:gap-10 max-sm:flex-col max-md:gap-4">
           <div
             onClick={redirectBlog}
-            className={`bg-[#171721] project p-4 gap-4 flex flex-col rounded-[12px] w-[300px] ${
-              isDarkMode ? "text-white" : "bg-white border-[2px] border-[#854ce6] border-[solid]"
+            className={`bg-[#171721]  p-4 gap-4 flex flex-col rounded-[12px] w-[300px] ${
+              isDarkMode ? "text-white project" : "bg-white border-[2px] projectWhite border-[#854ce6] border-[solid]"
             }`}
           >
             <div className="blog"></div>
@@ -52,8 +52,8 @@ export default function Projects({ isDarkMode }: DarkModeType) {
           </div>
           <div
             onClick={redirectFood}
-            className={`bg-[#171721] project p-4 gap-4 flex flex-col rounded-[12px] w-[300px] ${
-              isDarkMode ? "text-white" : "bg-white border-[2px] border-[#854ce6] border-[solid]"
+            className={`bg-[#171721]  p-4 gap-4 flex flex-col rounded-[12px] w-[300px] ${
+              isDarkMode ? "text-white project" : "bg-white projectWhite border-[2px] border-[#854ce6] border-[solid]"
             }`}
           >
             <div className="food"></div>
@@ -75,8 +75,8 @@ export default function Projects({ isDarkMode }: DarkModeType) {
         <div className="flex gap-2 max-xl:gap-10 max-sm:flex-col max-md:gap-4">
           <div
             onClick={redirectEcommerce}
-            className={`bg-[#171721] project p-4 gap-4 flex flex-col rounded-[12px] w-[300px] ${
-              isDarkMode ? "text-white" : "bg-white border-[2px] border-[#854ce6] border-[solid]"
+            className={`bg-[#171721]  p-4 gap-4 flex flex-col rounded-[12px] w-[300px] ${
+              isDarkMode ? "text-white project" : "bg-white projectWhite border-[2px] border-[#854ce6] border-[solid]"
             }`}
           >
             <div className="eCommerce"></div>
@@ -96,8 +96,8 @@ export default function Projects({ isDarkMode }: DarkModeType) {
           </div>
           <div
             onClick={redirectHRMS}
-            className={`bg-[#171721] project p-4 gap-4 flex flex-col rounded-[12px] w-[300px] ${
-              isDarkMode ? "text-white" : "bg-white border-[2px] border-[#854ce6] border-[solid]"
+            className={`bg-[#171721] p-4 gap-4 flex flex-col rounded-[12px] w-[300px] ${
+              isDarkMode ? "text-white project" : "bg-white projectWhite border-[2px] border-[#854ce6] border-[solid]"
             }`}
           >
             <div className="hrms"></div>
