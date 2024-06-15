@@ -81,7 +81,7 @@ export default function Projects({ isDarkMode }: DarkModeType) {
           >
             <div className="eCommerce"></div>
             <div className="flex flex-wrap gap-3">
-              {hrms.map((item, index) => (
+              {ecommerce.map((item, index) => (
                 <p
                   key={index}
                   className={`rounded-8px w-fit px-2 py-[2px] rounded-[50px] text-[#854CE6] bg-[#854CE615] ${
@@ -102,7 +102,7 @@ export default function Projects({ isDarkMode }: DarkModeType) {
           >
             <div className="hrms"></div>
             <div className="flex flex-wrap gap-3">
-              {ecommerce.map((item, index) => (
+              {hrms.map((item, index) => (
                 <p
                   key={index}
                   className={`rounded-8px w-fit px-2 py-[2px] rounded-[50px] text-[#854CE6] bg-[#854CE615] ${
