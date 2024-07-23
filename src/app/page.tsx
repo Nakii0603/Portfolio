@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
-import Footer from "@/components/Footer";
 
 function App() {
   const [isDarkMode, setDarkMode] = useState(true);
@@ -20,7 +19,6 @@ function App() {
           <About isDarkMode={isDarkMode} />
           <Skills isDarkMode={isDarkMode} />
           <Projects isDarkMode={isDarkMode} />
-          <Footer isDarkMode={isDarkMode} />
         </div>
       </div>
     </div>

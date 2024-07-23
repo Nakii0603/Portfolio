@@ -12,6 +12,9 @@ const Header = ({ isDarkMode, toggleDarkMode }: PropsType) => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+  const JumpCv = () => {
+    window.open("https://www.figma.com/design/jtmZ4zYEZ8Kn0ZnOxm4laF/Untitled?node-id=0-1&t=WZaujNPdF2LoLj1J-0");
+  };
 
   return (
     <header
@@ -39,12 +42,12 @@ const Header = ({ isDarkMode, toggleDarkMode }: PropsType) => {
         >
           Projects
         </p>
-        {/* <p
+        <p
           className={`hover-underline-animation cursor-pointer all-1000 ${isDarkMode ? "text-white" : ""}`}
-          onClick={() => scrollToSection("contact")}
+          onClick={JumpCv}
         >
-          Contact
-        </p> */}
+          CV
+        </p>
         <DarkModeSwitch checked={isDarkMode} onChange={toggleDarkMode} size={30} />
       </div>
     </header>
