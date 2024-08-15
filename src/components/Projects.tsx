@@ -18,7 +18,7 @@ export default function Projects({ isDarkMode }: DarkModeType) {
   return (
     <div
       id="project"
-      className={`p-4 flex gap-3 w-[100vw] flex-col items-center  ${isDarkMode ? "bg-black" : "bg-white"}`}
+      className={`p-4 flex gap-3  flex-col items-center  ${isDarkMode ? "bg-black" : "bg-white"}`}
     >
       <h2
         className={`text-[42px] font-semibold mb-[20px] max-md:text-[32px] max-md:mt-[12px]  ${

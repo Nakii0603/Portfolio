@@ -4,7 +4,7 @@ import { DarkModeType } from "../type/Types";
 const Skills = ({ isDarkMode }: DarkModeType) => {
   return (
     <div
-      className={`flex flex-col justify-center w-[100vw] items-center pb-[80px] ${isDarkMode ? "bg-black" : "bg-white"}`}
+      className={`flex flex-col justify-center max-w-[1400px] items-center pb-[80px] ${isDarkMode ? "bg-black" : "bg-white"}`}
       id="skills"
     >
       <div
