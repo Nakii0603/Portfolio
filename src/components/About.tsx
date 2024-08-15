@@ -5,7 +5,7 @@ export default function About({ isDarkMode }: DarkModeType) {
   return (
     <div
       id="about"
-      className={`gap-[50px] p-4  flex justify-center ${isDarkMode ? "bg-[black]" : "bg-[white]"}`}
+      className={`gap-[50px] p-4  w-[100wv] flex justify-center ${isDarkMode ? "bg-[black]" : "bg-[white]"}`}
     >
       <div className="mt-[250px] max-sm:mt-[100px] max-lg:mt-[200px] ">
         <div className="flex justify-between max-md:justify-center">
