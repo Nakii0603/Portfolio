@@ -53,14 +53,14 @@ const Header = ({ isDarkMode, toggleDarkMode }: PropsType) => {
           >
             Projects
           </p>
-          <p
+          {/* <p
             className={`hover-underline-animation cursor-pointer all-1000 ${
               isDarkMode ? "text-white" : ""
             }`}
             onClick={JumpCv}
           >
             CV
-          </p>
+          </p> */}
           <DarkModeSwitch
             checked={isDarkMode}
             onChange={toggleDarkMode}
