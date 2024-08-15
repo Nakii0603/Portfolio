@@ -8,7 +8,7 @@ const Skills = ({ isDarkMode }: DarkModeType) => {
       id="skills"
     >
       <div
-        className={`flex justify-between items-center flex-col w-[100%] max-w-[1100px] gap-3 flex-wrap ${
+        className={`flex justify-between items-center flex-col w-[100%] gap-3 flex-wrap ${
           isDarkMode ? "" : ""
         }`}
       >
