@@ -18,7 +18,6 @@ function App() {
           <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
           <About isDarkMode={isDarkMode} />
           <Skills isDarkMode={isDarkMode} />
-          <Projects isDarkMode={isDarkMode} />
         </div>
       </div>
     </div>
