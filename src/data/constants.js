@@ -29,7 +29,7 @@ export const hrms = [
   {
     tech: "Jest",
   },
-]
+];
 export const ecommerce = [
   {
     tech: "Typescript",
@@ -49,8 +49,7 @@ export const ecommerce = [
   {
     tech: "Material UI",
   },
-
-]
+];
 export const food = [
   {
     tech: "Typescript",
@@ -67,7 +66,7 @@ export const food = [
   {
     tech: "Material UI",
   },
-]
+];
 export const blog = [
   {
     tech: "Javascript",
@@ -84,7 +83,38 @@ export const blog = [
   {
     tech: "Tailwind CSS",
   },
-]
+];
+export const pepsi = [
+  {
+    tech: "Javascript",
+  },
+  {
+    tech: "Tailwind CSS",
+  },
+  {
+    tech: "Next js",
+  },
+  {
+    tech: "Node Js",
+  },
+  {
+    tech: "MongoDB",
+  },
+];
+export const school = [
+  {
+    tech: "Javascript",
+  },
+  {
+    tech: "Next js",
+  },
+  {
+    tech: "React",
+  },
+  {
+    tech: "Tailwind CSS",
+  },
+];
 export const skills = [
   {
     title: "Frontend",
@@ -96,7 +126,8 @@ export const skills = [
       },
       {
         name: "Typescrift",
-        image: "data:image/webp;base64,UklGRhoEAABXRUJQVlA4WAoAAAAQAAAArwAArwAAQUxQSGUAAAABHyAQIPxXUWYjIoKNJCBJkRURoRVFktQQXghAyjkhZ6mYwNQYIKL/EwAUiL//KCJSUSRJzQEvBCDlnJCzVExgahRE9D/UiFhRN4LtIblBkkDymfTi9/8LhfyRDJPUS/pHOpmcCgBWUDggjgMAABAbAJ0BKrAAsAA+3WqvT6impKIrtLihEBuJTdwtzh1wbu3xDB5nAfOKbazneNOkp3nlZY7K7YC6U1nsn8JNlT88qfnlT88qfnlT88qfnlT88qfnVqcFZ2dFHC3HX7//cURPheGyqcB8EbiIyy/gsJ+f+BGWQpAjR1Pgfbhu4cYtTf2JbdvSCSrQWUsXDSJRt3j1ifVbZ0/AQkbK+qOUc0J6CJZBw52hag+GOHRlDn3b5+cs0Ljku2RFarrqsiKmfS2sJMQlr9FcxtrZgPsLy8T10mv2VzcIRpi9RuXLFcAAAAD+9xZ/dWaZydJ1TPpb5KmBfMEgkcEWRbz219AAAAGz9FZiFErDZKBfJHnlRmndiofxu35PHemqU0xjQ9WzeL84mOcdkRS/+hySgHEO/AaAqLCVgY+pwpC7uHy8VovU1HRhsB7lXr6EPfyptmRiMJ8S9IAt/t3CtrLub+WpdCNH4GVbnfH2NrkZNlFmRzPbig3f1cRFe/EshR+Cfyq/GfUsPY4pwd5x46Kn+btcJbeRYM1+A66BQlSCMEwgKjT/7iLFSa80IHalBs2TD4dtMLQKRCmNE9klI7A1Y3hzYiuoJK04JLz1shYRH5EanEWGKOyHn+FMN79x/9c1CCGudndhYf++esO26Hf00TcLMuDKkqL/gzEdfy8VpXtT9DhD4X6ZPLdv3FRQ3Yg41PBrjrF9ThR73QpFZAYTHSTic6egslysmCrM8kJpBTrJP+M1poDGrVyijzFxKNaoy0g4VVx/mn+E/0nyJQZy+p5vsaU5Bsurb6E1NilJ8dYDLLVhs82tqdihXqjFn0kR11WAYg0zmM2F0iEBW4EHCyhFASyudJ6SPBWOdQ+ij7VJuaLQUxeunAxTzS3t+xtAplU15GVpxE+h4AclyJRYHepsxQrpb3fDbEY03LQqJKKJjazq7YpzeBgRbth32fTtseQwpIBB93HgrAHWlstoapbmKleLcol5nvRPzRvoMxoF2ou5Z16btA7ZgWljpoUQBsW1GWePypUd2KIRiK7CD4BaLJtFUF+Iaj5sRyxKDIuL9rChkWnFBSCO/BlzlPEjINwM0ue8Z4RemwkXmed/v7JAi9GvYUn2Em4CwdQW20wWnYRRFnkRqV0tf9rl2ZJrcgUTRR9lbdAcu899bgkwBcZ8PhVhWBGvESxr+WjwCus/gODFHmgM7Klc8hswLXoAAAA="
+        image:
+          "data:image/webp;base64,UklGRhoEAABXRUJQVlA4WAoAAAAQAAAArwAArwAAQUxQSGUAAAABHyAQIPxXUWYjIoKNJCBJkRURoRVFktQQXghAyjkhZ6mYwNQYIKL/EwAUiL//KCJSUSRJzQEvBCDlnJCzVExgahRE9D/UiFhRN4LtIblBkkDymfTi9/8LhfyRDJPUS/pHOpmcCgBWUDggjgMAABAbAJ0BKrAAsAA+3WqvT6impKIrtLihEBuJTdwtzh1wbu3xDB5nAfOKbazneNOkp3nlZY7K7YC6U1nsn8JNlT88qfnlT88qfnlT88qfnlT88qfnVqcFZ2dFHC3HX7//cURPheGyqcB8EbiIyy/gsJ+f+BGWQpAjR1Pgfbhu4cYtTf2JbdvSCSrQWUsXDSJRt3j1ifVbZ0/AQkbK+qOUc0J6CJZBw52hag+GOHRlDn3b5+cs0Ljku2RFarrqsiKmfS2sJMQlr9FcxtrZgPsLy8T10mv2VzcIRpi9RuXLFcAAAAD+9xZ/dWaZydJ1TPpb5KmBfMEgkcEWRbz219AAAAGz9FZiFErDZKBfJHnlRmndiofxu35PHemqU0xjQ9WzeL84mOcdkRS/+hySgHEO/AaAqLCVgY+pwpC7uHy8VovU1HRhsB7lXr6EPfyptmRiMJ8S9IAt/t3CtrLub+WpdCNH4GVbnfH2NrkZNlFmRzPbig3f1cRFe/EshR+Cfyq/GfUsPY4pwd5x46Kn+btcJbeRYM1+A66BQlSCMEwgKjT/7iLFSa80IHalBs2TD4dtMLQKRCmNE9klI7A1Y3hzYiuoJK04JLz1shYRH5EanEWGKOyHn+FMN79x/9c1CCGudndhYf++esO26Hf00TcLMuDKkqL/gzEdfy8VpXtT9DhD4X6ZPLdv3FRQ3Yg41PBrjrF9ThR73QpFZAYTHSTic6egslysmCrM8kJpBTrJP+M1poDGrVyijzFxKNaoy0g4VVx/mn+E/0nyJQZy+p5vsaU5Bsurb6E1NilJ8dYDLLVhs82tqdihXqjFn0kR11WAYg0zmM2F0iEBW4EHCyhFASyudJ6SPBWOdQ+ij7VJuaLQUxeunAxTzS3t+xtAplU15GVpxE+h4AclyJRYHepsxQrpb3fDbEY03LQqJKKJjazq7YpzeBgRbth32fTtseQwpIBB93HgrAHWlstoapbmKleLcol5nvRPzRvoMxoF2ou5Z16btA7ZgWljpoUQBsW1GWePypUd2KIRiK7CD4BaLJtFUF+Iaj5sRyxKDIuL9rChkWnFBSCO/BlzlPEjINwM0ue8Z4RemwkXmed/v7JAi9GvYUn2Em4CwdQW20wWnYRRFnkRqV0tf9rl2ZJrcgUTRR9lbdAcu899bgkwBcZ8PhVhWBGvESxr+WjwCus/gODFHmgM7Klc8hswLXoAAAA=",
       },
       {
         name: "React Js",
@@ -119,7 +150,8 @@ export const skills = [
       },
       {
         name: "Tailwind CSS",
-        image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAPFBMVEX////G6fxsyvk/v/g4vfhhyPmz4vuK1PoAtfckufgvu/hTxPn6/f+h2/tGwPjS7v255fxMwviT1/qn3vsZjXhWAAAAbElEQVR4AeWOCQqAMAwEq11r06b3//9qAwiI0QfowHINC2N+yLJabE53uycgUGTtF11CmDqLLVdZ57iJhSt9V+4cCQB5a1RGJgr9FrrW866GbmpoGylISlNC3RxnsbY+hLbX0GSJIKE6zOajHN4ZA8/fNs9XAAAAAElFTkSuQmCC",
+        image:
+          "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAPFBMVEX////G6fxsyvk/v/g4vfhhyPmz4vuK1PoAtfckufgvu/hTxPn6/f+h2/tGwPjS7v255fxMwviT1/qn3vsZjXhWAAAAbElEQVR4AeWOCQqAMAwEq11r06b3//9qAwiI0QfowHINC2N+yLJabE53uycgUGTtF11CmDqLLVdZ57iJhSt9V+4cCQB5a1RGJgr9FrrW866GbmpoGylISlNC3RxnsbY+hLbX0GSJIKE6zOajHN4ZA8/fNs9XAAAAAElFTkSuQmCC",
       },
       {
         name: "Material UI",
