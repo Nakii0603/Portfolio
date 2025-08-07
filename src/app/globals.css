@@ -21,7 +21,7 @@
 
 .projectWhite {
   background-size: cover;
-  transition: transform 500ms, border 500ms, box-shadow 500ms; 
+  transition: transform 500ms, border 500ms, box-shadow 500ms;
 }
 
 .projectWhite:hover {
@@ -94,9 +94,17 @@
   background-repeat: no-repeat;
   background-size: 100%;
 }
-.blog {
+.aylay {
   border-radius: 4px;
-  background-image: url("./../../public/blog.png");
+  background-image: url("./../../public/aylay.png");
+  width: 100%;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.dashboard {
+  border-radius: 4px;
+  background-image: url("./../../public/dash.png");
   width: 100%;
   height: 150px;
   background-repeat: no-repeat;

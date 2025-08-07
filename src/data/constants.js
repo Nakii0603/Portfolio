@@ -50,7 +50,7 @@ export const ecommerce = [
     tech: "Material UI",
   },
 ];
-export const food = [
+export const aylay = [
   {
     tech: "Typescript",
   },
@@ -67,18 +67,15 @@ export const food = [
     tech: "Material UI",
   },
 ];
-export const blog = [
+export const dashboard = [
   {
-    tech: "Javascript",
+    tech: "Typescript",
+  },
+  {
+    tech: "Next js",
   },
   {
     tech: "React",
-  },
-  {
-    tech: "Node Js",
-  },
-  {
-    tech: "MongoDB",
   },
   {
     tech: "Tailwind CSS",

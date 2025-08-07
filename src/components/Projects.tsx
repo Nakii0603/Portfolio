@@ -1,25 +1,25 @@
 import React from "react";
 import { DarkModeType } from "../type/Types";
-import { blog, ecommerce, food, hrms, pepsi, school } from "@/data/constants";
+import { dashboard, aylay, pepsi, school } from "@/data/constants";
 
 export default function Projects({ isDarkMode }: DarkModeType) {
-  const redirectEcommerce = () => {
-    window.open("https://ecommerce-mo.vercel.app/");
+  const redirectAylay = () => {
+    window.open("https://www.aylay.mn/");
   };
-  const redirectFood = () => {
-    window.open("https://food-delivery-mo.vercel.app/");
-  };
-  const redirectBlog = () => {
-    window.open("https://blogwebsite-ruddy.vercel.app/");
-  };
-  const redirectHRMS = () => {
-    window.open("https://intern-hrms-dashboard-prod-pinecone-studio.vercel.app/employee-details");
+  const redirectDashboard = () => {
+    window.open("https://dashboard-sigma-navy-62.vercel.app/dashboard/users");
   };
   const redirectPepsi = () => {
     window.open("https://pepsi-porfolio.vercel.app/");
   };
   const redirectSchool = () => {
     window.open("https://school-web-eight-ashy.vercel.app/");
+  };
+  const redirectPepMobile = () => {
+    window.open("https://apps.apple.com/mn/app/fizz-point/id6745452290");
+  };
+  const redirectAylayMobile = () => {
+    window.open("https://apps.apple.com/mn/app/aylay/id6749126660");
   };
   return (
     <div
@@ -38,16 +38,16 @@ export default function Projects({ isDarkMode }: DarkModeType) {
       <div className="flex justify-between gap-4 mb-12 max-xl:flex-col max-xl:gap-10 max-md:gap-4">
         <div className="flex gap-4 max-xl:gap-10 max-sm:flex-col max-md:gap-4">
           <div
-            onClick={redirectBlog}
+            onClick={redirectDashboard}
             className={`bg-[#171721]  p-4 gap-4 flex flex-col rounded-[12px] w-[300px] h-[320px] ${
               isDarkMode
                 ? "text-white project"
                 : "bg-white border-[2px] projectWhite border-[#854ce6] border-[solid]"
             }`}
           >
-            <div className="blog"></div>
+            <div className="dashboard"></div>
             <div className="flex flex-wrap gap-3">
-              {blog.map((item, index) => (
+              {dashboard.map((item, index) => (
                 <p
                   key={index}
                   className={`rounded-8px w-fit px-2 py-[2px] rounded-[50px] text-[#854CE6] bg-[#854CE615] ${
@@ -63,20 +63,20 @@ export default function Projects({ isDarkMode }: DarkModeType) {
                 isDarkMode ? "text-white" : "text-black"
               }`}
             >
-              Blog site
+              Admin dashboard
             </p>
           </div>
           <div
-            onClick={redirectFood}
+            onClick={redirectAylay}
             className={`bg-[#171721]  p-4 gap-4 flex flex-col rounded-[12px] w-[300px] h-[320px] ${
               isDarkMode
                 ? "text-white project"
                 : "bg-white projectWhite border-[2px] border-[#854ce6] border-[solid]"
             }`}
           >
-            <div className="food"></div>
+            <div className="aylay"></div>
             <div className="flex flex-wrap gap-3">
-              {food.map((item, index) => (
+              {aylay.map((item, index) => (
                 <p
                   key={index}
                   className={`rounded-8px w-fit px-2 py-[2px] rounded-[50px] text-[#854CE6] bg-[#854CE615] ${
@@ -92,7 +92,7 @@ export default function Projects({ isDarkMode }: DarkModeType) {
                 isDarkMode ? "text-white" : "text-black"
               }`}
             >
-              Food Delivery
+              Aylay.mn
             </p>
           </div>
         </div>
@@ -197,6 +197,22 @@ export default function Projects({ isDarkMode }: DarkModeType) {
             </div>
             <p className={` text-[20px] ${isDarkMode ? "text-white" : "text-black"}`}>HRMS</p>
           </div> */}
+        </div>
+      </div>
+      <div className="flex flex-wrap justify-center gap-3">
+        <div className=" cursor-pointer" onClick={redirectAylayMobile}>
+          <img
+            className="max-w-[300px] w-full justify-around"
+            src="/aylayPhone.png"
+            alt=""
+          />
+        </div>
+        <div className=" cursor-pointer" onClick={redirectPepMobile}>
+          <img
+            className="max-w-[300px] w-full justify-around"
+            src="/pepPhone.png"
+            alt=""
+          />
         </div>
       </div>
     </div>
