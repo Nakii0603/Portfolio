@@ -201,8 +201,7 @@ export const skills = [
 
       {
         name: "Cypress",
-        image:
-          "https://static-00.iconduck.com/assets.00/cypress-icon-512x511-29zvfts6.png",
+        image: "https://docs.cypress.io/img/logo/cypress-logo-circle-dark.png",
       },
 
       {

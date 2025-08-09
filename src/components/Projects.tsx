@@ -35,14 +35,16 @@ export default function Projects({ isDarkMode }: DarkModeType) {
       >
         Works
       </h2>
-      <div className="flex justify-between gap-4 mb-12 max-xl:flex-col max-xl:gap-10 max-md:gap-4">
-        <div className="flex gap-4 max-xl:gap-10 max-sm:flex-col max-md:gap-4">
+      <div className="flex flex-wrap gap-4 justify-center lg:justify-center">
+        {/* LEFT SIDE: 2x2 Grid of Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Card 1 */}
           <div
             onClick={redirectDashboard}
-            className={`bg-[#171721]  p-4 gap-4 flex flex-col rounded-[12px] w-[300px] h-[320px] ${
+            className={`bg-[#171721] p-4 gap-4 flex flex-col rounded-[12px] w-[300px] h-[320px] ${
               isDarkMode
                 ? "text-white project"
-                : "bg-white border-[2px] projectWhite border-[#854ce6] border-[solid]"
+                : "bg-white border-[2px] projectWhite border-[#854ce6] border-solid"
             }`}
           >
             <div className="dashboard"></div>
@@ -50,28 +52,28 @@ export default function Projects({ isDarkMode }: DarkModeType) {
               {dashboard.map((item, index) => (
                 <p
                   key={index}
-                  className={`rounded-8px w-fit px-2 py-[2px] rounded-[50px] text-[#854CE6] bg-[#854CE615] ${
-                    isDarkMode ? "text-[#854CE6] bg-[#854CE615]" : ""
-                  }`}
+                  className="rounded-[50px] w-fit px-2 py-[2px] text-[#854CE6] bg-[#854CE615]"
                 >
                   {item.tech}
                 </p>
               ))}
             </div>
             <p
-              className={` text-[20px] ${
+              className={`text-[20px] ${
                 isDarkMode ? "text-white" : "text-black"
               }`}
             >
               Admin dashboard
             </p>
           </div>
+
+          {/* Card 2 */}
           <div
             onClick={redirectAylay}
-            className={`bg-[#171721]  p-4 gap-4 flex flex-col rounded-[12px] w-[300px] h-[320px] ${
+            className={`bg-[#171721] p-4 gap-4 flex flex-col rounded-[12px] w-[300px] h-[320px] ${
               isDarkMode
                 ? "text-white project"
-                : "bg-white projectWhite border-[2px] border-[#854ce6] border-[solid]"
+                : "bg-white border-[2px] projectWhite border-[#854ce6] border-solid"
             }`}
           >
             <div className="aylay"></div>
@@ -79,30 +81,28 @@ export default function Projects({ isDarkMode }: DarkModeType) {
               {aylay.map((item, index) => (
                 <p
                   key={index}
-                  className={`rounded-8px w-fit px-2 py-[2px] rounded-[50px] text-[#854CE6] bg-[#854CE615] ${
-                    isDarkMode ? "text-[#854CE6] bg-[#854CE615]" : ""
-                  }`}
+                  className="rounded-[50px] w-fit px-2 py-[2px] text-[#854CE6] bg-[#854CE615]"
                 >
                   {item.tech}
                 </p>
               ))}
             </div>
             <p
-              className={` text-[20px] ${
+              className={`text-[20px] ${
                 isDarkMode ? "text-white" : "text-black"
               }`}
             >
               Aylay.mn
             </p>
           </div>
-        </div>
-        <div className="flex gap-4 max-xl:gap-10 max-sm:flex-col max-md:gap-4">
+
+          {/* Card 3 */}
           <div
             onClick={redirectPepsi}
-            className={`bg-[#171721]  p-4 gap-4 flex flex-col rounded-[12px] w-[300px] h-[320px] ${
+            className={`bg-[#171721] p-4 gap-4 flex flex-col rounded-[12px] w-[300px] h-[320px] ${
               isDarkMode
                 ? "text-white project"
-                : "bg-white projectWhite border-[2px] border-[#854ce6] border-[solid]"
+                : "bg-white border-[2px] projectWhite border-[#854ce6] border-solid"
             }`}
           >
             <div className="pepsi"></div>
@@ -110,28 +110,28 @@ export default function Projects({ isDarkMode }: DarkModeType) {
               {pepsi.map((item, index) => (
                 <p
                   key={index}
-                  className={`rounded-8px w-fit px-2 py-[2px] rounded-[50px] text-[#854CE6] bg-[#854CE615] ${
-                    isDarkMode ? "text-[#854CE6] bg-[#854CE615]" : ""
-                  }`}
+                  className="rounded-[50px] w-fit px-2 py-[2px] text-[#854CE6] bg-[#854CE615]"
                 >
                   {item.tech}
                 </p>
               ))}
             </div>
             <p
-              className={` text-[20px] ${
+              className={`text-[20px] ${
                 isDarkMode ? "text-white" : "text-black"
               }`}
             >
               Pepsi
             </p>
           </div>
+
+          {/* Card 4 */}
           <div
             onClick={redirectSchool}
-            className={`bg-[#171721]  p-4 gap-4 flex flex-col rounded-[12px] w-[300px] h-[320px] ${
+            className={`bg-[#171721] p-4 gap-4 flex flex-col rounded-[12px] w-[300px] h-[320px] ${
               isDarkMode
                 ? "text-white project"
-                : "bg-white projectWhite border-[2px] border-[#854ce6] border-[solid]"
+                : "bg-white border-[2px] projectWhite border-[#854ce6] border-solid"
             }`}
           >
             <div className="school"></div>
@@ -139,80 +139,38 @@ export default function Projects({ isDarkMode }: DarkModeType) {
               {school.map((item, index) => (
                 <p
                   key={index}
-                  className={`rounded-8px w-fit px-2 py-[2px] rounded-[50px] text-[#854CE6] bg-[#854CE615] ${
-                    isDarkMode ? "text-[#854CE6] bg-[#854CE615]" : ""
-                  }`}
+                  className="rounded-[50px] w-fit px-2 py-[2px] text-[#854CE6] bg-[#854CE615]"
                 >
                   {item.tech}
                 </p>
               ))}
             </div>
             <p
-              className={` text-[20px] ${
+              className={`text-[20px] ${
                 isDarkMode ? "text-white" : "text-black"
               }`}
             >
               School website
             </p>
           </div>
-          {/* <div
-            onClick={redirectEcommerce}
-            className={`bg-[#171721]  p-4 gap-4 flex flex-col rounded-[12px] w-[300px] ${
-              isDarkMode ? "text-white project" : "bg-white projectWhite border-[2px] border-[#854ce6] border-[solid]"
-            }`}
-          >
-            <div className="eCommerce"></div>
-            <div className="flex flex-wrap gap-3">
-              {ecommerce.map((item, index) => (
-                <p
-                  key={index}
-                  className={`rounded-8px w-fit px-2 py-[2px] rounded-[50px] text-[#854CE6] bg-[#854CE615] ${
-                    isDarkMode ? "text-[#854CE6] bg-[#854CE615]" : ""
-                  }`}
-                >
-                  {item.tech}
-                </p>
-              ))}
-            </div>
-            <p className={` text-[20px] ${isDarkMode ? "text-white" : "text-black"}`}>ECommerce</p>
-          </div> */}
-          {/* <div
-            onClick={redirectHRMS}
-            className={`bg-[#171721] p-4 gap-4 flex flex-col rounded-[12px] w-[300px] ${
-              isDarkMode ? "text-white project" : "bg-white projectWhite border-[2px] border-[#854ce6] border-[solid]"
-            }`}
-          >
-            <div className="hrms"></div>
-            <div className="flex flex-wrap gap-3">
-              {hrms.map((item, index) => (
-                <p
-                  key={index}
-                  className={`rounded-8px w-fit px-2 py-[2px] rounded-[50px] text-[#854CE6] bg-[#854CE615] ${
-                    isDarkMode ? "text-[#854CE6] bg-[#854CE615]" : ""
-                  }`}
-                >
-                  {item.tech}
-                </p>
-              ))}
-            </div>
-            <p className={` text-[20px] ${isDarkMode ? "text-white" : "text-black"}`}>HRMS</p>
-          </div> */}
         </div>
-      </div>
-      <div className="flex flex-wrap justify-center gap-3">
-        <div className=" cursor-pointer" onClick={redirectAylayMobile}>
-          <img
-            className="max-w-[300px] w-full justify-around"
-            src="/aylayPhone.png"
-            alt=""
-          />
-        </div>
-        <div className=" cursor-pointer" onClick={redirectPepMobile}>
-          <img
-            className="max-w-[300px] w-full justify-around"
-            src="/pepPhone.png"
-            alt=""
-          />
+
+        {/* RIGHT SIDE: 2x1 Image Layout (side-by-side) */}
+        <div className="flex flex-row gap-6 flex-wrap justify-center">
+          <div className="cursor-pointer" onClick={redirectAylayMobile}>
+            <img
+              className="max-w-[320px] w-full object-contain"
+              src="/aylayPhone.png"
+              alt="Aylay Phone"
+            />
+          </div>
+          <div className="cursor-pointer" onClick={redirectPepMobile}>
+            <img
+              className="max-w-[320px] w-full object-contain"
+              src="/pepPhone.png"
+              alt="Pepsi Phone"
+            />
+          </div>
         </div>
       </div>
     </div>
