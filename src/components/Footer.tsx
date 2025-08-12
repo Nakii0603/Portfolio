@@ -1,18 +1,58 @@
-import { DarkModeType } from "@/type/Types";
+// components/Footer.tsx
+"use client";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
-export default function Footer({ isDarkMode }: DarkModeType) {
-  const JumpCv = () => {
-    window.open("https://www.figma.com/design/jtmZ4zYEZ8Kn0ZnOxm4laF/Untitled?node-id=0-1&t=WZaujNPdF2LoLj1J-0");
-  };
+interface FooterProps {
+  isDarkMode: boolean;
+}
 
+export default function Footer({ isDarkMode }: FooterProps) {
   return (
-    <div
-      id="contact"
-      className={`p-4 py-[100px] flex gap-3 w-[100vw] flex-col items-center  ${isDarkMode ? "bg-black" : "bg-white"}`}
+    <footer
+      className={`w-full py-6 mt-10 ${
+        isDarkMode ? "bg-[#111]" : "bg-gray-100"
+      } transition-colors`}
     >
-      <p className={` text-[50px] font-bold cursor-pointer underline ${isDarkMode ? "text-white" : ""}`} onClick={JumpCv}>
-        CV
-      </p>
-    </div>
+      <div className="max-w-[1400px] mx-auto px-4 flex flex-col items-center justify-center text-center">
+        <p
+          className={`text-sm mb-4 ${
+            isDarkMode ? "text-gray-400" : "text-gray-600"
+          }`}
+        >
+          © {new Date().getFullYear()} Таны нэр. Бүх эрх хуулиар хамгаалагдсан.
+        </p>
+
+        <div className="flex gap-6 text-xl">
+          <a
+            href="https://github.com/Nakii0603"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`hover:text-blue-500 transition-colors ${
+              isDarkMode ? "text-white" : "text-gray-700"
+            }`}
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://linkedin.com/in/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`hover:text-blue-500 transition-colors ${
+              isDarkMode ? "text-white" : "text-gray-700"
+            }`}
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="nakii.munkh@gmail.com"
+            className={`hover:text-blue-500 transition-colors ${
+              isDarkMode ? "text-white" : "text-gray-700"
+            }`}
+          >
+            <FaEnvelope />
+          </a>
+        </div>
+      </div>
+    </footer>
   );
 }
