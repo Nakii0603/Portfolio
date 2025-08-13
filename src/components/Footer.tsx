@@ -1,6 +1,6 @@
 // components/Footer.tsx
 "use client";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaFacebook } from "react-icons/fa";
 
 interface FooterProps {
   isDarkMode: boolean;
@@ -19,7 +19,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
             isDarkMode ? "text-gray-400" : "text-gray-600"
           }`}
         >
-          © {new Date().getFullYear()} Таны нэр. Бүх эрх хуулиар хамгаалагдсан.
+          Холбогдохыг хүсвэл доорх холбоосуудыг ашиглаарай.
         </p>
 
         <div className="flex gap-6 text-xl">
@@ -34,17 +34,18 @@ export default function Footer({ isDarkMode }: FooterProps) {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.facebook.com/nakii.nakii.589/"
             target="_blank"
             rel="noopener noreferrer"
             className={`hover:text-blue-500 transition-colors ${
               isDarkMode ? "text-white" : "text-gray-700"
             }`}
           >
-            <FaLinkedin />
+            <FaFacebook />
           </a>
+
           <a
-            href="nakii.munkh@gmail.com"
+            href="mailto:nakii.munkh@gmail.com"
             className={`hover:text-blue-500 transition-colors ${
               isDarkMode ? "text-white" : "text-gray-700"
             }`}
