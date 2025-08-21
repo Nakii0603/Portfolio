@@ -18,18 +18,9 @@ function App() {
       <div className="max-w-[1400px] m-auto">
         <div className="flex items-center flex-col">
           <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
-
-          <FadeInSection direction="left" delay={0.1}>
-            <About isDarkMode={isDarkMode} />
-          </FadeInSection>
-
-          <FadeInSection direction="right" delay={0.3}>
-            <Skills isDarkMode={isDarkMode} />
-          </FadeInSection>
-
-          <FadeInSection direction="left" delay={0.5}>
-            <Projects isDarkMode={isDarkMode} />
-          </FadeInSection>
+          <About isDarkMode={isDarkMode} />
+          <Skills isDarkMode={isDarkMode} />
+          <Projects isDarkMode={isDarkMode} />
           <Footer isDarkMode={isDarkMode} />
         </div>
       </div>

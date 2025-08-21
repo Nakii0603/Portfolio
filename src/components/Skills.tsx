@@ -4,7 +4,9 @@ import { DarkModeType } from "../type/Types";
 const Skills = ({ isDarkMode }: DarkModeType) => {
   return (
     <div
-      className={`flex flex-col justify-center max-w-[1400px] items-center pb-[80px] ${isDarkMode ? "bg-black" : "bg-white"}`}
+      className={`flex flex-col justify-center max-w-[1400px] md:h-[100vh] items-center pb-[80px] ${
+        isDarkMode ? "bg-black" : "bg-white"
+      }`}
       id="skills"
     >
       <div
@@ -20,7 +22,9 @@ const Skills = ({ isDarkMode }: DarkModeType) => {
           Skills
         </p>
         <div
-          className={` w-[100%] flex flex-wrap mt-[30px] mb-[50px] gap-[30px] justify-center ${isDarkMode ? "" : ""}`}
+          className={` w-[100%] flex flex-wrap mt-[30px] mb-[50px] gap-[30px] justify-center ${
+            isDarkMode ? "" : ""
+          }`}
         >
           {skills.map((skill, index) => (
             <div
@@ -36,7 +40,11 @@ const Skills = ({ isDarkMode }: DarkModeType) => {
               >
                 {skill.title}
               </p>
-              <div className={`flex justify-center flex-wrap gap-3 mb-[20px]  ${isDarkMode ? "" : ""}`}>
+              <div
+                className={`flex justify-center flex-wrap gap-3 mb-[20px]  ${
+                  isDarkMode ? "" : ""
+                }`}
+              >
                 {skill.skills.map((item, index) => (
                   <div
                     className={` text-[16px] border-[1px] border-[#b4b4b4] border-solid font-normal rounded-[12px] py-[12px] px-[16px] flex items-center justify-center gap-2 max-md:text-[14px] max-md:py-[8px] max-md:px-[12px] max-sm:py-[6px] max-sm:px-[12px] ${
@@ -45,7 +53,11 @@ const Skills = ({ isDarkMode }: DarkModeType) => {
                     key={index}
                   >
                     <img className="w-[24px] h-[24px] " src={item.image} />
-                    <p className={` all-1000 ${isDarkMode ? "text-white" : ""}`}>{item.name}</p>
+                    <p
+                      className={` all-1000 ${isDarkMode ? "text-white" : ""}`}
+                    >
+                      {item.name}
+                    </p>
                   </div>
                 ))}
               </div>
