@@ -8,31 +8,53 @@ interface CursorFollowerProps {
 export default function CursorFollower({ isDarkMode }: CursorFollowerProps) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
+    // Check if device supports hover (desktop)
+    const checkIsDesktop = () => {
+      setIsDesktop(
+        window.matchMedia("(hover: hover) and (pointer: fine)").matches
+      );
+    };
+
+    checkIsDesktop();
+    window.addEventListener("resize", checkIsDesktop);
+
     const updateMousePosition = (e: MouseEvent) => {
+      if (!isDesktop) return;
       setMousePosition({ x: e.clientX, y: e.clientY });
       setIsVisible(true);
     };
 
     const handleMouseLeave = () => {
+      if (!isDesktop) return;
       setIsVisible(false);
     };
 
     const handleMouseEnter = () => {
+      if (!isDesktop) return;
       setIsVisible(true);
     };
 
-    window.addEventListener("mousemove", updateMousePosition);
-    document.addEventListener("mouseleave", handleMouseLeave);
-    document.addEventListener("mouseenter", handleMouseEnter);
+    if (isDesktop) {
+      window.addEventListener("mousemove", updateMousePosition);
+      document.addEventListener("mouseleave", handleMouseLeave);
+      document.addEventListener("mouseenter", handleMouseEnter);
+    }
 
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseenter", handleMouseEnter);
+      window.removeEventListener("resize", checkIsDesktop);
     };
-  }, []);
+  }, [isDesktop]);
+
+  // Don't render cursor on mobile devices
+  if (!isDesktop) {
+    return null;
+  }
 
   return (
     <>

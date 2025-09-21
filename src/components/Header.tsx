@@ -59,10 +59,10 @@ const Header = ({
           : "bg-white/80 backdrop-blur-md border-b border-gray-200/50"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-center">
+      <div className="max-w-7xl mx-auto px-6 py-4 md:py-1 py-2">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="absolute left-6">
+          <div>
             <h1
               className={`text-2xl font-bold bg-gradient-to-r ${
                 isDarkMode
@@ -78,47 +78,47 @@ const Header = ({
           <nav className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection("about")}
-              className={`relative text-sm font-medium transition-all duration-300 hover:scale-105 ${
+              className={`relative text-sm font-medium transition-all duration-300 md:hover:scale-105 ${
                 isDarkMode
-                  ? "text-gray-300 hover:text-white"
-                  : "text-gray-600 hover:text-gray-900"
+                  ? "text-gray-300 md:hover:text-white"
+                  : "text-gray-600 md:hover:text-gray-900"
               }`}
             >
               {currentHeaderContent.about}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 md:hover:w-full"></span>
             </button>
             <button
               onClick={() => scrollToSection("skills")}
-              className={`relative text-sm font-medium transition-all duration-300 hover:scale-105 ${
+              className={`relative text-sm font-medium transition-all duration-300 md:hover:scale-105 ${
                 isDarkMode
-                  ? "text-gray-300 hover:text-white"
-                  : "text-gray-600 hover:text-gray-900"
+                  ? "text-gray-300 md:hover:text-white"
+                  : "text-gray-600 md:hover:text-gray-900"
               }`}
             >
               {currentHeaderContent.skills}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 md:hover:w-full"></span>
             </button>
             <button
               onClick={() => scrollToSection("project")}
-              className={`relative text-sm font-medium transition-all duration-300 hover:scale-105 ${
+              className={`relative text-sm font-medium transition-all duration-300 md:hover:scale-105 ${
                 isDarkMode
-                  ? "text-gray-300 hover:text-white"
-                  : "text-gray-600 hover:text-gray-900"
+                  ? "text-gray-300 md:hover:text-white"
+                  : "text-gray-600 md:hover:text-gray-900"
               }`}
             >
               {currentHeaderContent.projects}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 md:hover:w-full"></span>
             </button>
           </nav>
 
           {/* Action Buttons */}
-          <div className="absolute right-6 flex items-center space-x-4">
+          <div className="flex items-center space-x-4 z-50">
             <button
               onClick={downloadCv}
-              className={`hidden sm:block px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 transform hover:scale-105 ${
+              className={`hidden sm:block px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 transform md:hover:scale-105 ${
                 isDarkMode
-                  ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:shadow-lg hover:shadow-purple-500/25"
-                  : "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:shadow-lg hover:shadow-purple-500/25"
+                  ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white md:hover:shadow-lg md:hover:shadow-purple-500/25"
+                  : "bg-gradient-to-r from-purple-600 to-blue-600 text-white md:hover:shadow-lg md:hover:shadow-purple-500/25"
               }`}
             >
               {currentHeaderContent.downloadCV}
@@ -127,18 +127,18 @@ const Header = ({
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
-              className={`px-3 py-2 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 ${
+              className={`px-4 py-2 rounded-full font-semibold text-sm transition-all duration-300 md:hover:scale-105 ${
                 isDarkMode
-                  ? "bg-gray-800 text-white border border-gray-600 hover:bg-gray-700"
-                  : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
+                  ? "bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-300 border border-purple-500/30 md:hover:from-purple-600/30 md:hover:to-blue-600/30"
+                  : "bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 border border-purple-300 md:hover:from-purple-200 md:hover:to-blue-200"
               }`}
             >
               {isMongolian ? "EN" : "МN"}
             </button>
 
             <div
-              className={`p-2 rounded-full transition-all duration-300 hover:scale-110 ${
-                isDarkMode ? "hover:bg-gray-800" : "hover:bg-gray-100"
+              className={`p-2 rounded-full transition-all duration-300 md:hover:scale-110 ${
+                isDarkMode ? "md:hover:bg-gray-800" : "md:hover:bg-gray-100"
               }`}
             >
               <DarkModeSwitch
@@ -151,28 +151,50 @@ const Header = ({
             {/* Hamburger Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`md:hidden p-2 rounded-lg transition-all duration-300 ${
+              className={`md:hidden p-3 rounded-lg transition-all duration-300 relative z-50 ${
                 isDarkMode
-                  ? "text-gray-300 hover:text-white hover:bg-gray-800"
-                  : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                  ? "text-gray-300 active:text-white active:bg-gray-800"
+                  : "text-gray-600 active:text-gray-900 active:bg-gray-100"
               }`}
             >
-              <div className="w-6 h-6 flex flex-col justify-center items-center">
-                <span
-                  className={`block w-5 h-0.5 transition-all duration-300 ${
-                    isMobileMenuOpen ? "rotate-45 translate-y-1" : ""
-                  } ${isDarkMode ? "bg-white" : "bg-gray-900"}`}
-                ></span>
-                <span
-                  className={`block w-5 h-0.5 mt-1 transition-all duration-300 ${
-                    isMobileMenuOpen ? "opacity-0" : ""
-                  } ${isDarkMode ? "bg-white" : "bg-gray-900"}`}
-                ></span>
-                <span
-                  className={`block w-5 h-0.5 mt-1 transition-all duration-300 ${
-                    isMobileMenuOpen ? "-rotate-45 -translate-y-1" : ""
-                  } ${isDarkMode ? "bg-white" : "bg-gray-900"}`}
-                ></span>
+              <div className="w-6 h-6 flex items-center justify-center">
+                {isMobileMenuOpen ? (
+                  // X Icon
+                  <svg
+                    className={`w-6 h-6 transition-all duration-300 ${
+                      isDarkMode ? "text-white" : "text-gray-900"
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                ) : (
+                  // Hamburger Icon
+                  <svg
+                    className={`w-6 h-6 transition-all duration-300 ${
+                      isDarkMode ? "text-white" : "text-gray-900"
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                )}
               </div>
             </button>
           </div>
@@ -180,21 +202,21 @@ const Header = ({
 
         {/* Mobile Navigation */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${
+          className={`md:hidden overflow-hidden transition-all duration-300 relative z-30 ${
             isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="mt-4 pt-4 border-t border-gray-200/20">
+          <div className="mt-4 pt-4 mb-5 border-t border-gray-200/20">
             <div className="flex flex-col items-center space-y-3">
               <button
                 onClick={() => {
                   scrollToSection("about");
                   setIsMobileMenuOpen(false);
                 }}
-                className={`text-center py-2 px-6 rounded-lg transition-all duration-300 ${
+                className={`text-center py-3 px-6 rounded-lg transition-all duration-300 ${
                   isDarkMode
-                    ? "text-gray-300 hover:text-white hover:bg-gray-800"
-                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                    ? "text-gray-300 active:text-white active:bg-gray-800"
+                    : "text-gray-600 active:text-gray-900 active:bg-gray-100"
                 }`}
               >
                 {currentHeaderContent.about}
@@ -204,10 +226,10 @@ const Header = ({
                   scrollToSection("skills");
                   setIsMobileMenuOpen(false);
                 }}
-                className={`text-center py-2 px-6 rounded-lg transition-all duration-300 ${
+                className={`text-center py-3 px-6 rounded-lg transition-all duration-300 ${
                   isDarkMode
-                    ? "text-gray-300 hover:text-white hover:bg-gray-800"
-                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                    ? "text-gray-300 active:text-white active:bg-gray-800"
+                    : "text-gray-600 active:text-gray-900 active:bg-gray-100"
                 }`}
               >
                 {currentHeaderContent.skills}
@@ -217,10 +239,10 @@ const Header = ({
                   scrollToSection("project");
                   setIsMobileMenuOpen(false);
                 }}
-                className={`text-center py-2 px-6 rounded-lg transition-all duration-300 ${
+                className={`text-center py-3 px-6 rounded-lg transition-all duration-300 ${
                   isDarkMode
-                    ? "text-gray-300 hover:text-white hover:bg-gray-800"
-                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                    ? "text-gray-300 active:text-white active:bg-gray-800"
+                    : "text-gray-600 active:text-gray-900 active:bg-gray-100"
                 }`}
               >
                 {currentHeaderContent.projects}
@@ -230,7 +252,7 @@ const Header = ({
                   downloadCv();
                   setIsMobileMenuOpen(false);
                 }}
-                className={`text-center py-2 px-6 rounded-lg transition-all duration-300 ${
+                className={`text-center py-3 px-6 rounded-lg transition-all duration-300 active:scale-95 ${
                   isDarkMode
                     ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white"
                     : "bg-gradient-to-r from-purple-600 to-blue-600 text-white"
