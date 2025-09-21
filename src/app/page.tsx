@@ -33,9 +33,9 @@ function App() {
       />
       <main className="pt-20">
         <About isDarkMode={isDarkMode} isMongolian={isMongolian} />
-        <Skills isDarkMode={isDarkMode} />
-        <Projects isDarkMode={isDarkMode} />
-        <Footer isDarkMode={isDarkMode} />
+        <Skills isDarkMode={isDarkMode} isMongolian={isMongolian} />
+        <Projects isDarkMode={isDarkMode} isMongolian={isMongolian} />
+        <Footer isDarkMode={isDarkMode} isMongolian={isMongolian} />
       </main>
     </div>
   );

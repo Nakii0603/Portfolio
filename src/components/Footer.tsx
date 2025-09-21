@@ -11,9 +11,32 @@ import {
 
 interface FooterProps {
   isDarkMode: boolean;
+  isMongolian: boolean;
 }
 
-export default function Footer({ isDarkMode }: FooterProps) {
+export default function Footer({ isDarkMode, isMongolian }: FooterProps) {
+  // Language content
+  const content = {
+    en: {
+      title: "Let's Connect",
+      subtitle:
+        "Ready to collaborate or have a project in mind? Let's discuss how we can work together to bring your ideas to life.",
+      getInTouch: "Get in Touch",
+      copyright:
+        "© 2024 Natsagdorj. All rights reserved. Built with Next.js and Tailwind CSS.",
+    },
+    mn: {
+      title: "Холбогдоё",
+      subtitle:
+        "Хамтран ажиллах бэлэн байна уу эсвэл төсөл санаа байна уу? Таны санааг амьдралд хэрэгжүүлэхэд хэрхэн хамтран ажиллах талаар ярилцъя.",
+      getInTouch: "Холбоо Барих",
+      copyright:
+        "© 2024 Нацагдорж. Бүх эрх хуулиар хамгаалагдсан. Next.js болон Tailwind CSS-ээр бүтээгдсэн.",
+    },
+  };
+
+  const currentContent = isMongolian ? content.mn : content.en;
+
   const socialLinks = [
     {
       name: "GitHub",
@@ -86,15 +109,14 @@ export default function Footer({ isDarkMode }: FooterProps) {
                   : "bg-gradient-to-r from-gray-900 via-purple-600 to-blue-600 bg-clip-text text-transparent"
               }`}
             >
-              Let's Connect
+              {currentContent.title}
             </h3>
             <p
               className={`text-lg max-w-2xl mx-auto mb-8 ${
                 isDarkMode ? "text-gray-300" : "text-gray-600"
               }`}
             >
-              Ready to collaborate or have a project in mind? Let's discuss how
-              we can work together to bring your ideas to life.
+              {currentContent.subtitle}
             </p>
           </div>
 
@@ -151,7 +173,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
                 isDarkMode ? "text-white" : "text-gray-900"
               }`}
             >
-              Get in Touch
+              {currentContent.getInTouch}
             </p>
             <a
               href="mailto:nakii.munkh@gmail.com"
@@ -176,8 +198,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
                 isDarkMode ? "text-gray-400" : "text-gray-500"
               }`}
             >
-              © 2024 Natsagdorj. All rights reserved. Built with Next.js and
-              Tailwind CSS.
+              {currentContent.copyright}
             </p>
           </div>
         </div>

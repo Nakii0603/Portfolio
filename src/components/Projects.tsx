@@ -9,6 +9,7 @@ type CardProps = {
   onClick: () => void;
   isDarkMode: boolean;
   desc: string;
+  isMongolian: boolean;
 };
 
 function ProjectCard({
@@ -18,6 +19,7 @@ function ProjectCard({
   onClick,
   isDarkMode,
   desc,
+  isMongolian,
 }: CardProps) {
   return (
     <div
@@ -130,7 +132,7 @@ function ProjectCard({
                 : "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700"
             }`}
           >
-            View Project
+            {isMongolian ? "Төслийг Үзэх" : "View Project"}
           </button>
         </div>
       </div>
@@ -141,7 +143,11 @@ function ProjectCard({
   );
 }
 
-export default function Projects({ isDarkMode }: DarkModeType) {
+type ProjectsProps = DarkModeType & {
+  isMongolian: boolean;
+};
+
+export default function Projects({ isDarkMode, isMongolian }: ProjectsProps) {
   const redirectAylay = () => window.open("https://www.aylay.mn/");
   const redirectDashboard = () =>
     window.open("https://dashboard-sigma-navy-62.vercel.app/dashboard/users");
@@ -153,20 +159,55 @@ export default function Projects({ isDarkMode }: DarkModeType) {
   const redirectAylayMobile = () =>
     window.open("https://apps.apple.com/mn/app/aylay/id6749126660");
 
-  // Товч танилцуулгууд (хүсвэл constants руу гаргаж болно)
-  const blurbs = {
-    dashboard:
-      "Админы зориулалттай аналитик платформ. Хэрэглэгчийн удирдлага, real-time үзүүлэлт, борлуулалтын тайлан болон Chart.js-ийн динамик графикуудтай Next.js дээр бүтээгдсэн уян dashboard. Менежмент болон дата-д суурилсан шийдвэр гаргахад дэмжлэг үзүүлнэ.",
-
-    aylay:
-      "Монголын аялал жуулчлалд зориулсан ухаалаг travel платформ. Offline газрын зураг, AI-д суурилсан маршрутын санал болголт, зардлын тооцоолол, аяллын зөвлөгөө, аялалд бэлтгэх жагсаалт зэрэг иж бүрэн боломжтой. Аялагчид интернетгүй нөхцөлд ч найдвартай ашиглах боломжтой.",
-
-    pepsi:
-      "GN Beverages-ийн 'Fizz Point' брэндийн танилцуулга болон landing page прототип. Кампанит ажлын UI/UX туршилтын шийдэл, хэрэглэгчийн урамшуулал цуглуулах урсгал, лоялти онооны танилцуулга бүхий туршилтын загвар.",
-
-    school:
-      "Сургуулийн болон боловсролын хөтөлбөрийн танилцуулгын вэб сайт. Элсэлтийн мэдээлэл, хичээлийн хуваарь, мэдээ мэдээллийн модуль, онлайн бүртгэлийн хэсэгтэй. Сурагч, эцэг эх, багш нарт зориулсан нэг цогц мэдээллийн платформ.",
+  // Language content
+  const content = {
+    en: {
+      title: "My Projects",
+      subtitle:
+        "A showcase of my recent work and projects that demonstrate my skills and passion for development.",
+      mobileApps: "Mobile Applications",
+      blurbs: {
+        dashboard:
+          "Admin-focused analytics platform. User management, real-time metrics, sales reports and dynamic charts with Chart.js built on Next.js. A flexible dashboard that supports management and data-driven decision making.",
+        aylay:
+          "Smart travel platform for Mongolia tourism. Complete features including offline maps, AI-based route suggestions, cost calculations, travel advice, and travel preparation lists. Travelers can use it reliably even without internet.",
+        pepsi:
+          "GN Beverages 'Fizz Point' brand introduction and landing page prototype. Campaign UI/UX testing solution with user incentive collection flow and loyalty points introduction prototype.",
+        school:
+          "School and educational program introduction website. With admission information, class schedules, news modules, and online registration sections. A comprehensive information platform for students, parents, and teachers.",
+      },
+      projectTitles: {
+        dashboard: "Admin Dashboard",
+        aylay: "Aylay.mn",
+        pepsi: "Pepsi Campaign",
+        school: "School Website",
+      },
+    },
+    mn: {
+      title: "Миний Төслүүд",
+      subtitle:
+        "Миний сүүлийн үеийн ажил болон төслүүдийн үзүүлэн, миний чадвар болон хөгжүүлэлтийн хүсэл эрмэлзлийг харуулж байна.",
+      mobileApps: "Гар Утасны Аппликейшн",
+      blurbs: {
+        dashboard:
+          "Админы зориулалттай аналитик платформ. Хэрэглэгчийн удирдлага, real-time үзүүлэлт, борлуулалтын тайлан болон Chart.js-ийн динамик графикуудтай Next.js дээр бүтээгдсэн уян dashboard. Менежмент болон дата-д суурилсан шийдвэр гаргахад дэмжлэг үзүүлнэ.",
+        aylay:
+          "Монголын аялал жуулчлалд зориулсан ухаалаг travel платформ. Offline газрын зураг, AI-д суурилсан маршрутын санал болголт, зардлын тооцоолол, аяллын зөвлөгөө, аялалд бэлтгэх жагсаалт зэрэг иж бүрэн боломжтой. Аялагчид интернетгүй нөхцөлд ч найдвартай ашиглах боломжтой.",
+        pepsi:
+          "GN Beverages-ийн 'Fizz Point' брэндийн танилцуулга болон landing page прототип. Кампанит ажлын UI/UX туршилтын шийдэл, хэрэглэгчийн урамшуулал цуглуулах урсгал, лоялти онооны танилцуулга бүхий туршилтын загвар.",
+        school:
+          "Сургуулийн болон боловсролын хөтөлбөрийн танилцуулгын вэб сайт. Элсэлтийн мэдээлэл, хичээлийн хуваарь, мэдээ мэдээллийн модуль, онлайн бүртгэлийн хэсэгтэй. Сурагч, эцэг эх, багш нарт зориулсан нэг цогц мэдээллийн платформ.",
+      },
+      projectTitles: {
+        dashboard: "Админ Dashboard",
+        aylay: "Aylay.mn",
+        pepsi: "Pepsi Кампанит",
+        school: "Сургуулийн Вэбсайт",
+      },
+    },
   };
+
+  const currentContent = isMongolian ? content.mn : content.en;
 
   return (
     <div
@@ -202,54 +243,57 @@ export default function Projects({ isDarkMode }: DarkModeType) {
             }`}
             style={{ lineHeight: "1.2" }}
           >
-            My Projects
+            {currentContent.title}
           </h2>
           <p
             className={`text-lg max-w-2xl mx-auto ${
               isDarkMode ? "text-gray-300" : "text-gray-600"
             }`}
           >
-            A showcase of my recent work and projects that demonstrate my skills
-            and passion for development.
+            {currentContent.subtitle}
           </p>
         </div>
 
         {/* Projects Grid */}
         <div className="flex flex-wrap justify-center gap-8 mb-16">
           <ProjectCard
-            title="Admin Dashboard"
+            title={currentContent.projectTitles.dashboard}
             tech={dashboard}
             imageClass="dashboard"
             onClick={redirectDashboard}
             isDarkMode={isDarkMode}
-            desc={blurbs.dashboard}
+            desc={currentContent.blurbs.dashboard}
+            isMongolian={isMongolian}
           />
 
           <ProjectCard
-            title="Aylay.mn"
+            title={currentContent.projectTitles.aylay}
             tech={aylay}
             imageClass="aylay"
             onClick={redirectAylay}
             isDarkMode={isDarkMode}
-            desc={blurbs.aylay}
+            desc={currentContent.blurbs.aylay}
+            isMongolian={isMongolian}
           />
 
           <ProjectCard
-            title="Pepsi Campaign"
+            title={currentContent.projectTitles.pepsi}
             tech={pepsi}
             imageClass="pepsi"
             onClick={redirectPepsi}
             isDarkMode={isDarkMode}
-            desc={blurbs.pepsi}
+            desc={currentContent.blurbs.pepsi}
+            isMongolian={isMongolian}
           />
 
           <ProjectCard
-            title="School Website"
+            title={currentContent.projectTitles.school}
             tech={school}
             imageClass="school"
             onClick={redirectSchool}
             isDarkMode={isDarkMode}
-            desc={blurbs.school}
+            desc={currentContent.blurbs.school}
+            isMongolian={isMongolian}
           />
         </div>
 
@@ -260,7 +304,7 @@ export default function Projects({ isDarkMode }: DarkModeType) {
               isDarkMode ? "text-white" : "text-gray-900"
             }`}
           >
-            Mobile Applications
+            {currentContent.mobileApps}
           </h3>
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
             <div
