@@ -22,7 +22,11 @@ function App() {
   };
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? "bg-black" : "bg-white"}`}>
+    <div
+      className={`min-h-screen min-h-[100vh] min-h-[100dvh] ${
+        isDarkMode ? "bg-black" : "bg-white"
+      }`}
+    >
       <StarsBackground isDarkMode={isDarkMode} />
       <CursorFollower isDarkMode={isDarkMode} />
       <Header
@@ -31,7 +35,7 @@ function App() {
         isMongolian={isMongolian}
         toggleLanguage={toggleLanguage}
       />
-      <main className="pt-20">
+      <main>
         <About isDarkMode={isDarkMode} isMongolian={isMongolian} />
         <Skills isDarkMode={isDarkMode} isMongolian={isMongolian} />
         <Projects isDarkMode={isDarkMode} isMongolian={isMongolian} />

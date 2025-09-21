@@ -14,6 +14,33 @@
 body {
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
+  /* Fix mobile browser UI */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
+  /* Prevent white flash on mobile */
+  background-color: #000000;
+}
+
+/* Mobile browser UI fixes */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* iOS Safari specific fixes */
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Prevent white sections on mobile */
+html {
+  background-color: #000000;
+  /* Handle mobile viewport */
+  height: 100%;
+  height: -webkit-fill-available;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 /* Custom cursor styles - only on desktop */

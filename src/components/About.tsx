@@ -74,7 +74,7 @@ export default function About({ isDarkMode, isMongolian }: AboutProps) {
           <div className="space-y-6">
             <div className="space-y-4">
               <p
-                className={`text-xl font-medium ${
+                className={`text-xl font-medium mt-6 ${
                   isDarkMode ? "text-gray-300" : "text-gray-600"
                 }`}
               >

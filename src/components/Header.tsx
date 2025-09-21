@@ -53,13 +53,11 @@ const Header = ({
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all px-6 py-4 duration-300 ${
-        isDarkMode
-          ? "bg-black/80 backdrop-blur-md border-b border-gray-800/50"
-          : "bg-white/80 backdrop-blur-md border-b border-gray-200/50"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isDarkMode ? "bg-black backdrop-blur-md" : "bg-white backdrop-blur-md"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 md:py-1 py-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 md:py-5 lg:py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div>
