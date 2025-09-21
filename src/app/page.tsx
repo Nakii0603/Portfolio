@@ -6,6 +6,7 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import FadeInSection from "@/components/FadeInSection";
 import Footer from "@/components/Footer";
+import StarsBackground from "@/components/StarsBackground";
 
 function App() {
   const [isDarkMode, setDarkMode] = useState(true);
@@ -14,16 +15,15 @@ function App() {
   };
 
   return (
-    <div className={` ${isDarkMode ? "bg-[#000000]" : "bg-white"}`}>
-      <div className="max-w-[1400px] m-auto">
-        <div className="flex items-center flex-col">
-          <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
-          <About isDarkMode={isDarkMode} />
-          <Skills isDarkMode={isDarkMode} />
-          <Projects isDarkMode={isDarkMode} />
-          <Footer isDarkMode={isDarkMode} />
-        </div>
-      </div>
+    <div className={`min-h-screen ${isDarkMode ? "bg-black" : "bg-white"}`}>
+      <StarsBackground isDarkMode={isDarkMode} />
+      <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <main className="pt-20">
+        <About isDarkMode={isDarkMode} />
+        <Skills isDarkMode={isDarkMode} />
+        <Projects isDarkMode={isDarkMode} />
+        <Footer isDarkMode={isDarkMode} />
+      </main>
     </div>
   );
 }

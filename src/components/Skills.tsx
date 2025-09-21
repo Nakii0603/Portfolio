@@ -4,65 +4,127 @@ import { DarkModeType } from "../type/Types";
 const Skills = ({ isDarkMode }: DarkModeType) => {
   return (
     <div
-      className={`flex flex-col justify-center max-w-[1400px] md:h-[100vh] items-center pb-[80px] ${
-        isDarkMode ? "bg-black" : "bg-white"
+      className={`relative py-20 ${
+        isDarkMode
+          ? "bg-gradient-to-br from-black via-gray-900 to-black"
+          : "bg-gradient-to-br from-white via-gray-50 to-white"
       }`}
       id="skills"
     >
-      <div
-        className={`flex justify-between items-center flex-col w-[100%] gap-3 flex-wrap ${
-          isDarkMode ? "" : ""
-        }`}
-      >
-        <p
-          className={`all-1000 text-[42px] text-center font-semibold mt-[20px] max-md:text-[32px] max-md:mt-[12px] ${
-            isDarkMode ? "text-white" : ""
-          }`}
-        >
-          Skills
-        </p>
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
         <div
-          className={` w-[100%] flex flex-wrap mt-[30px] mb-[50px] gap-[30px] justify-center ${
-            isDarkMode ? "" : ""
-          }`}
-        >
+          className={`absolute top-1/4 left-1/4 w-64 h-64 rounded-full opacity-5 ${
+            isDarkMode ? "bg-purple-500" : "bg-blue-500"
+          } blur-3xl`}
+        ></div>
+        <div
+          className={`absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-5 ${
+            isDarkMode ? "bg-blue-500" : "bg-purple-500"
+          } blur-3xl`}
+        ></div>
+      </div>
+
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2
+            className={`text-4xl lg:text-6xl font-bold mb-4 ${
+              isDarkMode
+                ? "bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent"
+                : "bg-gradient-to-r from-gray-900 via-purple-600 to-blue-600 bg-clip-text text-transparent"
+            }`}
+            style={{ lineHeight: "1.2" }}
+          >
+            Skills & Technologies
+          </h2>
+          <p
+            className={`text-lg max-w-2xl mx-auto ${
+              isDarkMode ? "text-gray-300" : "text-gray-600"
+            }`}
+          >
+            Technologies and tools I work with to bring ideas to life.
+          </p>
+        </div>
+
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
             <div
-              className={` w-[100%] max-w-[500px] border-[2px] border-[#854ce6] border-[solid] rounded-[16px] p-[18px 36px] max-md:max-w-[400px] max-sm:max-w-[330px] max-sm:p-[10px 36px]  ${
-                isDarkMode ? "bg-[#120c17]" : "bg-[white] border-[#cdbde8]"
-              }`}
               key={index}
+              className={`group relative overflow-hidden rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 ${
+                isDarkMode
+                  ? "bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-purple-500/50"
+                  : "bg-gradient-to-br from-white/80 to-gray-50/80 border border-gray-200/50 hover:border-purple-500/50 shadow-lg hover:shadow-2xl"
+              } backdrop-blur-sm`}
             >
-              <p
-                className={`all-1000 text-[28px] font-semibold mb-[20px] text-center ${
-                  isDarkMode ? "text-[#b4b4b4]" : ""
-                }`}
-              >
-                {skill.title}
-              </p>
-              <div
-                className={`flex justify-center flex-wrap gap-3 mb-[20px]  ${
-                  isDarkMode ? "" : ""
-                }`}
-              >
-                {skill.skills.map((item, index) => (
+              {/* Card Header */}
+              <div className="text-center mb-8">
+                <h3
+                  className={`text-2xl font-bold mb-2 ${
+                    isDarkMode ? "text-white" : "text-gray-900"
+                  }`}
+                >
+                  {skill.title}
+                </h3>
+                <div
+                  className={`w-16 h-1 mx-auto rounded-full ${
+                    isDarkMode
+                      ? "bg-gradient-to-r from-purple-500 to-blue-500"
+                      : "bg-gradient-to-r from-purple-600 to-blue-600"
+                  }`}
+                ></div>
+              </div>
+
+              {/* Skills Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {skill.skills.map((item, skillIndex) => (
                   <div
-                    className={` text-[16px] border-[1px] border-[#b4b4b4] border-solid font-normal rounded-[12px] py-[12px] px-[16px] flex items-center justify-center gap-2 max-md:text-[14px] max-md:py-[8px] max-md:px-[12px] max-sm:py-[6px] max-sm:px-[12px] ${
-                      isDarkMode ? "" : ""
-                    }`}
-                    key={index}
+                    key={skillIndex}
+                    className={`group/skill flex items-center gap-3 p-3 rounded-xl transition-all duration-300 hover:scale-105 ${
+                      isDarkMode
+                        ? "bg-gray-800/50 hover:bg-gray-700/50 border border-gray-700/30 hover:border-purple-500/30"
+                        : "bg-white/50 hover:bg-gray-100/50 border border-gray-200/30 hover:border-purple-500/30"
+                    } backdrop-blur-sm`}
                   >
-                    <img className="w-[24px] h-[24px] " src={item.image} />
-                    <p
-                      className={` all-1000 ${isDarkMode ? "text-white" : ""}`}
+                    <div className="flex-shrink-0">
+                      <img
+                        className="w-8 h-8 object-contain transition-transform duration-300 group-hover/skill:scale-110"
+                        src={item.image}
+                        alt={item.name}
+                      />
+                    </div>
+                    <span
+                      className={`text-sm font-medium transition-colors duration-300 ${
+                        isDarkMode
+                          ? "text-gray-200 group-hover/skill:text-white"
+                          : "text-gray-700 group-hover/skill:text-gray-900"
+                      }`}
                     >
                       {item.name}
-                    </p>
+                    </span>
                   </div>
                 ))}
               </div>
+
+              {/* Hover effect overlay */}
+              <div
+                className={`absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`}
+              ></div>
             </div>
           ))}
+        </div>
+
+        {/* Additional Info */}
+        <div className="text-center mt-16">
+          <p
+            className={`text-lg ${
+              isDarkMode ? "text-gray-400" : "text-gray-600"
+            }`}
+          >
+            Always learning and exploring new technologies to stay current with
+            industry trends.
+          </p>
         </div>
       </div>
     </div>
