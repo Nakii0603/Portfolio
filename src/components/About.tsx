@@ -1,7 +1,50 @@
-import { DarkModeType } from "../type/Types";
+import { DarkModeType, LanguageType } from "../type/Types";
 import { ExampleComponent } from "./Type";
 
-export default function About({ isDarkMode }: DarkModeType) {
+type AboutProps = DarkModeType & {
+  isMongolian: boolean;
+};
+
+export default function About({ isDarkMode, isMongolian }: AboutProps) {
+  // Language content
+  const content = {
+    en: {
+      greeting: "Hello, I'm",
+      name: "Natsagdorj",
+      description:
+        "Passionate IT professional with a drive for innovation and a dedication to helping companies succeed. Skilled at adapting to different situations, achieving goals, and collaborating with diverse teams.",
+      innovation: "Innovation Focus",
+      innovationDesc:
+        "Always seeking new technologies and creative solutions to complex problems.",
+      collaboration: "Team Collaboration",
+      collaborationDesc:
+        "Experienced in working with diverse teams and flexible leadership approaches.",
+      achievement: "Goal Achievement",
+      achievementDesc:
+        "Proven track record of delivering results and meeting objectives in any setting.",
+      viewWork: "View My Work",
+      downloadCV: "Download CV",
+    },
+    mn: {
+      greeting: "Сайн байна уу, би бол",
+      name: "Нацагдорж",
+      description:
+        "Инновацид дуртай, компаниудын амжилтад хувь нэмэр оруулах хүсэл эрмэлзэлтэй IT мэргэжилтэн. Өөр өөр нөхцөл байдалд дасан зохицох, зорилгодоо хүрэх, олон янзын багтай хамтран ажиллах чадвартай.",
+      innovation: "Инновацийн Чиглэл",
+      innovationDesc:
+        "Шинэ технологи болон нарийн төвөгтэй асуудлын бүтээлч шийдлийг хайж байдаг.",
+      collaboration: "Багын Хамтын Ажиллагаа",
+      collaborationDesc:
+        "Олон янзын багтай ажиллах туршлагатай, уян хатан удирдлагын арга барилтай.",
+      achievement: "Зорилгодоо Хүрэх",
+      achievementDesc:
+        "Аливаа нөхцөлд үр дүн гаргах, зорилгодоо хүрэх батлагдсан түүхтэй.",
+      viewWork: "Миний Ажлыг Үзэх",
+      downloadCV: "CV Татах",
+    },
+  };
+
+  const currentContent = isMongolian ? content.mn : content.en;
   return (
     <div
       id="about"
@@ -25,107 +68,148 @@ export default function About({ isDarkMode }: DarkModeType) {
         ></div>
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-4 py-20">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          {/* Left Content */}
-          <div className="flex-1 text-center lg:text-left">
-            <div className="space-y-6">
-              {/* Greeting */}
-              <div className="space-y-2">
-                <p
-                  className={`text-lg font-medium ${
-                    isDarkMode ? "text-gray-300" : "text-gray-600"
-                  }`}
-                >
-                  Hello, I'm
-                </p>
-                <h1
-                  className={`text-5xl lg:text-7xl font-bold bg-gradient-to-r ${
-                    isDarkMode
-                      ? "from-white via-purple-200 to-blue-200"
-                      : "from-gray-900 via-purple-600 to-blue-600"
-                  } bg-clip-text text-transparent leading-tight`}
-                  style={{ lineHeight: "1.2" }}
-                >
-                  Natsagdorj
-                </h1>
-              </div>
-
-              {/* Type Animation */}
-              <div className="text-2xl lg:text-3xl">
-                <ExampleComponent />
-              </div>
-
-              {/* Description */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+        <div className="text-center space-y-12">
+          {/* Hero Section */}
+          <div className="space-y-6">
+            <div className="space-y-4">
               <p
-                className={`text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0 ${
+                className={`text-xl font-medium ${
                   isDarkMode ? "text-gray-300" : "text-gray-600"
                 }`}
               >
-                Passionate IT professional with a drive for innovation and a
-                dedication to helping companies succeed. Skilled at adapting to
-                different situations, achieving goals, and collaborating with
-                diverse teams. Possesses a flexible leadership style suited for
-                working towards common objectives in any setting.
+                {currentContent.greeting}
               </p>
+              <h1
+                className={`text-6xl md:text-8xl font-bold bg-gradient-to-r ${
+                  isDarkMode
+                    ? "from-white via-purple-200 to-blue-200"
+                    : "from-gray-900 via-purple-600 to-blue-600"
+                } bg-clip-text text-transparent`}
+                style={{ lineHeight: "1.2" }}
+              >
+                {currentContent.name}
+              </h1>
+            </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6">
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("project")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
-                    isDarkMode
-                      ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:shadow-lg hover:shadow-purple-500/25"
-                      : "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:shadow-lg hover:shadow-purple-500/25"
-                  }`}
-                >
-                  View My Work
-                </button>
-                <button
-                  onClick={() => {
-                    const link = document.createElement("a");
-                    link.href = "/cv.pdf";
-                    link.download = "Natsagdorj_CV.pdf";
-                    link.click();
-                  }}
-                  className={`px-8 py-3 rounded-full font-semibold border-2 transition-all duration-300 transform hover:scale-105 ${
-                    isDarkMode
-                      ? "border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white"
-                      : "border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
-                  }`}
-                >
-                  Download CV
-                </button>
-              </div>
+            {/* Type Animation */}
+            <div className="text-3xl md:text-4xl min-h-[3rem] flex items-center justify-center">
+              <ExampleComponent />
             </div>
           </div>
 
-          {/* Right Content - Image */}
-          <div className="flex-1 flex justify-center lg:justify-end">
-            <div className="relative">
+          {/* Main Content */}
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* Primary Description */}
+            <p
+              className={`text-xl md:text-2xl leading-relaxed ${
+                isDarkMode ? "text-gray-300" : "text-gray-600"
+              }`}
+            >
+              {currentContent.description}
+            </p>
+
+            {/* Key Highlights */}
+            <div className="grid md:grid-cols-3 gap-6 py-8">
               <div
-                className={`w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl ${
-                  isDarkMode ? "shadow-purple-500/20" : "shadow-gray-500/20"
+                className={`p-6 rounded-2xl border ${
+                  isDarkMode
+                    ? "bg-gray-800/50 border-gray-700"
+                    : "bg-white/50 border-gray-200"
+                } backdrop-blur-sm`}
+              >
+                <h3
+                  className={`text-lg font-semibold mb-2 ${
+                    isDarkMode ? "text-white" : "text-gray-900"
+                  }`}
+                >
+                  {currentContent.innovation}
+                </h3>
+                <p
+                  className={`text-sm ${
+                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                  }`}
+                >
+                  {currentContent.innovationDesc}
+                </p>
+              </div>
+              <div
+                className={`p-6 rounded-2xl border ${
+                  isDarkMode
+                    ? "bg-gray-800/50 border-gray-700"
+                    : "bg-white/50 border-gray-200"
+                } backdrop-blur-sm`}
+              >
+                <h3
+                  className={`text-lg font-semibold mb-2 ${
+                    isDarkMode ? "text-white" : "text-gray-900"
+                  }`}
+                >
+                  {currentContent.collaboration}
+                </h3>
+                <p
+                  className={`text-sm ${
+                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                  }`}
+                >
+                  {currentContent.collaborationDesc}
+                </p>
+              </div>
+              <div
+                className={`p-6 rounded-2xl border ${
+                  isDarkMode
+                    ? "bg-gray-800/50 border-gray-700"
+                    : "bg-white/50 border-gray-200"
+                } backdrop-blur-sm`}
+              >
+                <h3
+                  className={`text-lg font-semibold mb-2 ${
+                    isDarkMode ? "text-white" : "text-gray-900"
+                  }`}
+                >
+                  {currentContent.achievement}
+                </h3>
+                <p
+                  className={`text-sm ${
+                    isDarkMode ? "text-gray-300" : "text-gray-600"
+                  }`}
+                >
+                  {currentContent.achievementDesc}
+                </p>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
+              <button
+                onClick={() =>
+                  document
+                    .getElementById("project")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+                className={`px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${
+                  isDarkMode
+                    ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:shadow-lg hover:shadow-purple-500/25"
+                    : "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:shadow-lg hover:shadow-purple-500/25"
                 }`}
               >
-                <div className="img w-full h-full bg-cover bg-center"></div>
-              </div>
-              {/* Floating elements */}
-              <div
-                className={`absolute -top-4 -right-4 w-20 h-20 rounded-full ${
-                  isDarkMode ? "bg-purple-500" : "bg-blue-500"
-                } opacity-80 animate-pulse`}
-              ></div>
-              <div
-                className={`absolute -bottom-4 -left-4 w-16 h-16 rounded-full ${
-                  isDarkMode ? "bg-blue-500" : "bg-purple-500"
-                } opacity-80 animate-pulse`}
-                style={{ animationDelay: "1s" }}
-              ></div>
+                {currentContent.viewWork}
+              </button>
+              <button
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "/cv.pdf";
+                  link.download = "Natsagdorj_CV.pdf";
+                  link.click();
+                }}
+                className={`px-10 py-4 rounded-full font-semibold text-lg border-2 transition-all duration-300 transform hover:scale-105 ${
+                  isDarkMode
+                    ? "border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white"
+                    : "border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
+                }`}
+              >
+                {currentContent.downloadCV}
+              </button>
             </div>
           </div>
         </div>

@@ -56,13 +56,23 @@ function ProjectCard({
           {tech.slice(0, 3).map((item, index) => (
             <span
               key={index}
-              className="px-3 py-1 text-xs font-medium rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 text-purple-300 border border-purple-500/30"
+              className={`px-3 py-1 text-xs font-medium rounded-full transition-all duration-300 ${
+                isDarkMode
+                  ? "bg-gradient-to-r from-purple-500/20 to-blue-500/20 text-purple-300 border border-purple-500/30 hover:from-purple-500/30 hover:to-blue-500/30"
+                  : "bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 border border-purple-200 hover:from-purple-200 hover:to-blue-200 hover:border-purple-300 shadow-sm"
+              }`}
             >
               {item.tech}
             </span>
           ))}
           {tech.length > 3 && (
-            <span className="px-3 py-1 text-xs font-medium rounded-full bg-gray-500/20 text-gray-400 border border-gray-500/30">
+            <span
+              className={`px-3 py-1 text-xs font-medium rounded-full transition-all duration-300 ${
+                isDarkMode
+                  ? "bg-gray-500/20 text-gray-400 border border-gray-500/30"
+                  : "bg-gray-100 text-gray-600 border border-gray-200 hover:bg-gray-200 hover:border-gray-300 shadow-sm"
+              }`}
+            >
               +{tech.length - 3}
             </span>
           )}
@@ -79,21 +89,47 @@ function ProjectCard({
       </div>
 
       {/* Hover overlay with full description */}
-      <div className="absolute inset-0 bg-black/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 z-30 flex items-center justify-center p-6">
+      <div
+        className={`absolute inset-0 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 z-30 flex items-center justify-center p-6 ${
+          isDarkMode ? "bg-black/90" : "bg-white/95"
+        }`}
+      >
         <div className="text-center">
-          <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
-          <p className="text-gray-300 text-sm leading-relaxed mb-6">{desc}</p>
+          <h3
+            className={`text-2xl font-bold mb-4 ${
+              isDarkMode ? "text-white" : "text-gray-900"
+            }`}
+          >
+            {title}
+          </h3>
+          <p
+            className={`text-sm leading-relaxed mb-6 ${
+              isDarkMode ? "text-gray-300" : "text-gray-600"
+            }`}
+          >
+            {desc}
+          </p>
           <div className="flex flex-wrap gap-2 justify-center mb-6">
             {tech.map((item, index) => (
               <span
                 key={index}
-                className="px-3 py-1 text-xs font-medium rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30"
+                className={`px-3 py-1 text-xs font-medium rounded-full transition-all duration-300 ${
+                  isDarkMode
+                    ? "bg-purple-500/20 text-purple-300 border border-purple-500/30"
+                    : "bg-purple-100 text-purple-700 border border-purple-200 shadow-sm"
+                }`}
               >
                 {item.tech}
               </span>
             ))}
           </div>
-          <button className="px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+          <button
+            className={`px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300 ${
+              isDarkMode
+                ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white"
+                : "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700"
+            }`}
+          >
             View Project
           </button>
         </div>
@@ -232,7 +268,7 @@ export default function Projects({ isDarkMode }: DarkModeType) {
               onClick={redirectAylayMobile}
             >
               <div
-                className={`relative rounded-2xl overflow-hidden shadow-2xl ${
+                className={`relative rounded-2xl group-hover:rounded-[2.2rem] overflow-hidden shadow-2xl transition-all duration-300 ${
                   isDarkMode ? "shadow-purple-500/20" : "shadow-gray-500/20"
                 }`}
               >
@@ -252,7 +288,7 @@ export default function Projects({ isDarkMode }: DarkModeType) {
               onClick={redirectPepMobile}
             >
               <div
-                className={`relative rounded-2xl overflow-hidden shadow-2xl ${
+                className={`relative rounded-2xl group-hover:rounded-[2.2rem] overflow-hidden shadow-2xl transition-all duration-300 ${
                   isDarkMode ? "shadow-blue-500/20" : "shadow-gray-500/20"
                 }`}
               >

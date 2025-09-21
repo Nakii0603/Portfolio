@@ -14,6 +14,12 @@
 body {
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
+  cursor: none; /* Hide default cursor */
+}
+
+/* Custom cursor styles */
+* {
+  cursor: none !important;
 }
 
 /* Custom animations */
@@ -110,12 +116,8 @@ body {
 
 /* Project image classes */
 .img {
-  background-image: url("./../../public/MERN.png");
   width: 100%;
   height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
 .eCommerce {
