@@ -6,7 +6,7 @@ type CardProps = {
   title: string;
   tech: { tech: string }[];
   imageClass: string; // .dashboard, .aylay, .pepsi, .school
-  onClick: () => void;
+  href: string;
   isDarkMode: boolean;
   desc: string;
   isMongolian: boolean;
@@ -16,14 +16,16 @@ function ProjectCard({
   title,
   tech,
   imageClass,
-  onClick,
+  href,
   isDarkMode,
   desc,
   isMongolian,
 }: CardProps) {
   return (
-    <div
-      onClick={onClick}
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className={`group relative cursor-pointer rounded-2xl w-full max-w-[350px] min-w-[300px] flex-shrink-0 h-[400px] transition-all duration-500 overflow-hidden transform hover:scale-105 hover:-translate-y-2
         ${
           isDarkMode
@@ -125,7 +127,7 @@ function ProjectCard({
               </span>
             ))}
           </div>
-          <button
+          <span
             className={`px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all duration-300 ${
               isDarkMode
                 ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white"
@@ -133,13 +135,13 @@ function ProjectCard({
             }`}
           >
             {isMongolian ? "Төслийг Үзэх" : "View Project"}
-          </button>
+          </span>
         </div>
       </div>
 
       {/* Shine effect */}
       <div className="absolute inset-0 -top-2 -left-2 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 z-40"></div>
-    </div>
+    </a>
   );
 }
 
@@ -148,16 +150,13 @@ type ProjectsProps = DarkModeType & {
 };
 
 export default function Projects({ isDarkMode, isMongolian }: ProjectsProps) {
-  const redirectAylay = () => window.open("https://www.aylay.mn/");
-  const redirectDashboard = () =>
-    window.open("https://dashboard-sigma-navy-62.vercel.app/dashboard/users");
-  const redirectPepsi = () => window.open("https://pepsi-porfolio.vercel.app/");
-  const redirectSchool = () =>
-    window.open("https://school-web-eight-ashy.vercel.app/");
-  const redirectPepMobile = () =>
-    window.open("https://apps.apple.com/mn/app/fizz-point/id6745452290");
-  const redirectAylayMobile = () =>
-    window.open("https://apps.apple.com/mn/app/aylay/id6749126660");
+  const urlAylay = "https://www.aylay.mn/";
+  const urlDashboard =
+    "https://dashboard-sigma-navy-62.vercel.app/dashboard/users";
+  const urlPepsi = "https://pepsi-porfolio.vercel.app/";
+  const urlSchool = "https://school-web-eight-ashy.vercel.app/";
+  const urlPepMobile = "https://apps.apple.com/mn/app/fizz-point/id6745452290";
+  const urlAylayMobile = "https://apps.apple.com/mn/app/aylay/id6749126660";
 
   // Language content
   const content = {
@@ -260,7 +259,7 @@ export default function Projects({ isDarkMode, isMongolian }: ProjectsProps) {
             title={currentContent.projectTitles.dashboard}
             tech={dashboard}
             imageClass="dashboard"
-            onClick={redirectDashboard}
+            href={urlDashboard}
             isDarkMode={isDarkMode}
             desc={currentContent.blurbs.dashboard}
             isMongolian={isMongolian}
@@ -270,7 +269,7 @@ export default function Projects({ isDarkMode, isMongolian }: ProjectsProps) {
             title={currentContent.projectTitles.aylay}
             tech={aylay}
             imageClass="aylay"
-            onClick={redirectAylay}
+            href={urlAylay}
             isDarkMode={isDarkMode}
             desc={currentContent.blurbs.aylay}
             isMongolian={isMongolian}
@@ -280,7 +279,7 @@ export default function Projects({ isDarkMode, isMongolian }: ProjectsProps) {
             title={currentContent.projectTitles.pepsi}
             tech={pepsi}
             imageClass="pepsi"
-            onClick={redirectPepsi}
+            href={urlPepsi}
             isDarkMode={isDarkMode}
             desc={currentContent.blurbs.pepsi}
             isMongolian={isMongolian}
@@ -290,7 +289,7 @@ export default function Projects({ isDarkMode, isMongolian }: ProjectsProps) {
             title={currentContent.projectTitles.school}
             tech={school}
             imageClass="school"
-            onClick={redirectSchool}
+            href={urlSchool}
             isDarkMode={isDarkMode}
             desc={currentContent.blurbs.school}
             isMongolian={isMongolian}
@@ -307,9 +306,11 @@ export default function Projects({ isDarkMode, isMongolian }: ProjectsProps) {
             {currentContent.mobileApps}
           </h3>
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-            <div
+            <a
               className="group cursor-pointer transform hover:scale-105 transition-all duration-300"
-              onClick={redirectAylayMobile}
+              href={urlAylayMobile}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <div
                 className={`relative rounded-2xl group-hover:rounded-[2.2rem] overflow-hidden shadow-2xl transition-all duration-300 ${
@@ -325,11 +326,13 @@ export default function Projects({ isDarkMode, isMongolian }: ProjectsProps) {
                   <span className="text-white font-semibold">Aylay Mobile</span>
                 </div>
               </div>
-            </div>
+            </a>
 
-            <div
+            <a
               className="group cursor-pointer transform hover:scale-105 transition-all duration-300"
-              onClick={redirectPepMobile}
+              href={urlPepMobile}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <div
                 className={`relative rounded-2xl group-hover:rounded-[2.2rem] overflow-hidden shadow-2xl transition-all duration-300 ${
@@ -345,7 +348,7 @@ export default function Projects({ isDarkMode, isMongolian }: ProjectsProps) {
                   <span className="text-white font-semibold">Fizz Point</span>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
