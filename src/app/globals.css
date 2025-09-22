@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+/* Google Fonts imports removed. Fonts are now self-hosted via next/font. */
 
 /* Base styles */
 * {
@@ -12,7 +10,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  /* Font applied via next/font class on <body> */
   overflow-x: hidden;
   /* Fix mobile browser UI */
   -webkit-overflow-scrolling: touch;
@@ -223,10 +221,7 @@ body {
 }
 
 /* Typography */
-.roboto {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-}
+/* .roboto class no longer needed; retained for backward compatibility */
 
 .vt323-regular {
   font-family: "VT323", monospace;
